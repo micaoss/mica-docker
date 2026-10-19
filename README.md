@@ -18,8 +18,8 @@ chosen when the product is built. The release-lock and build rules run in
 | `runc` | opencontainers/runc `v1.5.2`, with seccomp | `/usr/bin/runc` |
 | `docker-init` | krallin/tini `v0.19.0`, static | `/usr/bin/docker-init` |
 
-It also ships `/etc/docker/daemon.json`, `docker.service` and the OpenRC script
-`/etc/init.d/docker`, and `/usr/share/mica-docker/upstream.lock`, the upstream
+It also ships `/etc/docker/daemon.json`, `/usr/lib/sysctl.d/50-mica-docker.conf`,
+`docker.service` and the OpenRC script `/etc/init.d/docker`, and `/usr/share/mica-docker/upstream.lock`, the upstream
 pins it was built from. It enables nothing and creates no user or group (no
 `docker` group: the socket is root's). `deb/payload.manifest` is the exact list
 of paths. There is no buildx and no `docker-containerd` unit: dockerd starts its
@@ -59,11 +59,17 @@ API on `/run/docker.sock`, and it switches the engine on and off.
 - **`daemon.json`** sets exactly `data-root` `/mica/containers/docker` (so
   micad's application reset and the DATA layout are those of podman products),
   `log-driver` `local`, and `firewall-backend` `nftables`.
+- **IP forwarding is on**: dockerd's nftables backend does not enable it and
+  refuses to create its bridge network without it.
+  `/usr/lib/sysctl.d/50-mica-docker.conf` sets `net.ipv4.ip_forward` and, where
+  the kernel has IPv6, `net.ipv6.conf.all.forwarding` to 1. systemd-sysctl
+  applies it at boot; on OpenRC, where no sysctl service runs, the `docker`
+  script's `start_pre` writes the same keys before dockerd starts.
 - **live-restore is off**, Docker's default, so it is not written: stopping
   dockerd stops its containers, and turning containers off in micad turns them
   really off. A container's `restart:` policy starts it again with dockerd.
 
-`tests/units-test.sh` holds the start-up files and `daemon.json` to this, and
+`tests/units-test.sh` holds the start-up files, the sysctl file and `daemon.json` to this, and
 `tests/docker-smoke.sh` the installed archive.
 
 Users run `docker` and `docker compose` as root on the device; what they start
@@ -198,7 +204,7 @@ builds each architecture on a native runner.
 | `tools/package.sh`, `deb/`, `overlay/` | stages and packs the archive with `mica-tools deb pack`, and indexes the pool |
 | `tests/package-gate.sh` | identity, payload, Depends, Provides and Conflicts, copyright, no conffiles or enablement, `mica-tools pool gate`, byte-identical rebuilds |
 | `tests/units-test.sh` | the start-up files and `daemon.json` against the runtime contract |
-| `tests/docker-smoke.sh` | the archive installed in a privileged container and run: offline start, pid file, API 1.44, containers, networks and DNS, nftables, ports, logs, compose, capabilities, devices, stop |
+| `tests/docker-smoke.sh` | the archive installed in a privileged container and run: forwarding off then applied, offline start, pid file, API 1.44, containers, networks and DNS, nftables, ports, logs, compose, capabilities, devices, stop |
 | `tools/release.sh` | publishes a release through `mica-tools` |
 | `tools/base-check.sh` | the Debian dependencies against the pinned Base release |
 | `tools/dev-pins.sh`, `pins/` | resolves, checks and fetches the build closure |

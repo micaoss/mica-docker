@@ -1,6 +1,7 @@
 # The payload of mica-docker: <mode> <d|f|l> <path> [-> <target>].
 # deb/Dockerfile refuses any difference from the staged tree.
 0644 f /etc/docker/daemon.json
+0644 f /usr/lib/sysctl.d/50-mica-docker.conf
 0644 f /usr/lib/systemd/system/docker.service
 0644 f /usr/share/doc/mica-docker/copyright
 0644 f /usr/share/mica-docker/upstream.lock
@@ -10,6 +11,7 @@
 0755 d /usr
 0755 d /usr/bin
 0755 d /usr/lib
+0755 d /usr/lib/sysctl.d
 0755 d /usr/lib/systemd
 0755 d /usr/lib/systemd/system
 0755 d /usr/libexec

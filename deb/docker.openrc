@@ -22,3 +22,21 @@ depend() {
     after micad
     use logger
 }
+
+# The forwarding of /usr/lib/sysctl.d/50-mica-docker.conf, which no sysctl service
+# applies on this init: each key written to /proc/sys; a key with a leading '-' is
+# skipped when the kernel lacks it.
+start_pre() {
+    while read -r line; do
+        case "${line}" in "" | "#"*) continue ;; esac
+        key="$(echo ${line%%=*})"
+        value="$(echo ${line#*=})"
+        path="/proc/sys/$(echo "${key#-}" | tr . /)"
+        if [ ! -e "${path}" ]; then
+            [ "${key#-}" != "${key}" ] && continue
+            eerror "${key#-} does not exist"
+            return 1
+        fi
+        echo "${value}" >"${path}" || return 1
+    done </usr/lib/sysctl.d/50-mica-docker.conf
+}

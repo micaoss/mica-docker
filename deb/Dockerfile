@@ -14,6 +14,7 @@ COPY --from=tools src /tools/src
 COPY mica-docker.control copyright payload.manifest docker.service docker.openrc /in/
 
 COPY --from=overlay etc/docker/daemon.json /in/etc/docker/
+COPY --from=overlay usr/lib/sysctl.d/50-mica-docker.conf /in/usr/lib/sysctl.d/
 
 COPY --from=bin dockerd docker-proxy docker docker-compose containerd containerd-shim-runc-v2 runc docker-init /in/bin/
 COPY --from=bin upstream.lock /in/upstream.lock
@@ -29,7 +30,7 @@ ARG MICA_DEB_SOURCE_REPO
 RUN set -eu; \
     install -d -m 0755 /stage/etc /stage/etc/docker /stage/etc/init.d \
                        /stage/usr /stage/usr/bin /stage/usr/lib /stage/usr/lib/systemd \
-                       /stage/usr/lib/systemd/system \
+                       /stage/usr/lib/systemd/system /stage/usr/lib/sysctl.d \
                        /stage/usr/libexec /stage/usr/libexec/docker /stage/usr/libexec/docker/cli-plugins \
                        /stage/usr/share /stage/usr/share/doc /stage/usr/share/doc/mica-docker \
                        /stage/usr/share/mica-docker; \
@@ -38,6 +39,7 @@ RUN set -eu; \
     done; \
     install -m 0755 /in/bin/docker-compose /stage/usr/libexec/docker/cli-plugins/docker-compose; \
     install -m 0644 /in/etc/docker/daemon.json /stage/etc/docker/daemon.json; \
+    install -m 0644 /in/usr/lib/sysctl.d/50-mica-docker.conf /stage/usr/lib/sysctl.d/50-mica-docker.conf; \
     install -m 0644 /in/docker.service /stage/usr/lib/systemd/system/docker.service; \
     install -m 0755 /in/docker.openrc  /stage/etc/init.d/docker; \
     install -m 0644 /in/copyright /stage/usr/share/doc/mica-docker/copyright; \

@@ -3,8 +3,9 @@
 # the mica-build-env base image, the archive's Debian Depends from the apt row of
 # locks/mica-system-base.lock (the snapshot the device roots install from), the
 # archive with dpkg (mica-system is not installed, so /mica/containers is made, on a
-# volume of its own). dockerd starts as docker.service starts it, first with no
-# default route; then the contract micad relies on (API 1.44, /run/docker.pid,
+# volume of its own). With IP forwarding off, dockerd refuses to start until the
+# package's sysctl.d file is applied; then it starts as docker.service starts it,
+# with no default route; then the contract micad relies on (API 1.44, /run/docker.pid,
 # daemon.json) and containers as users run them: exit codes, a network with name
 # resolution, nftables rules, a published port, local logs, compose, capabilities
 # and a device; last, stopping dockerd stops its containers (live-restore off).
@@ -76,6 +77,17 @@ docker run --rm --label ai-agent=true --privileged --platform "linux/${ARCH}" \
     }
     stopped_all() { pgrep -x sleep && stop && ! pgrep -x sleep; }
     echo "docker-smoke: $(dpkg-deb --field "${DEB}" Package Version | tr "\n" " ")on $(dpkg --print-architecture)"
+    # Forwarding off, as a device boots: dockerd refuses to create its bridge; the
+    # OpenRC start_pre and the sysctl.d file (as systemd-sysctl applies it) turn it on.
+    forwarding() { echo "$1" >/proc/sys/net/ipv4/ip_forward; [ ! -e /proc/sys/net/ipv6/conf/all/forwarding ] || echo "$1" >/proc/sys/net/ipv6/conf/all/forwarding; }
+    forwarding 0
+    refused() { ! timeout 60 /usr/bin/dockerd >/tmp/refused.log 2>&1 && grep -c "IPv4 forwarding is disabled" /tmp/refused.log; }
+    check "S0a with forwarding off dockerd refuses to start" refused
+    rm -f /run/docker.pid
+    openrc_pre() { sh -c "eerror() { echo \"\$*\" >&2; }; . /etc/init.d/docker; start_pre" && [ "$(cat /proc/sys/net/ipv4/ip_forward)" = 1 ]; }
+    check "S0b the OpenRC start_pre turns forwarding on" openrc_pre
+    forwarding 0
+    check "S0c the sysctl.d file, applied as systemd-sysctl does, turns forwarding on" sh -c "sysctl -q -p /usr/lib/sysctl.d/50-mica-docker.conf && [ \"\$(cat /proc/sys/net/ipv4/ip_forward)\" = 1 ]"
     ip route save table main >/tmp/routes
     ip route flush default
     check "S1 dockerd starts with no default route" start

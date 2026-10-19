@@ -47,5 +47,22 @@ check "J1 daemon.json sets exactly data-root, log-driver and firewall-backend" \
 check "J2 nothing sets a minimum API version, a pid file or live-restore" \
     bash -c '! grep -r -h -v "^[[:space:]]*#" deb/docker.service deb/docker.openrc overlay | grep -E -c "DOCKER_MIN_API_VERSION|min-api-version|live-restore|\"pidfile\""'
 
+SYSCTL=overlay/usr/lib/sysctl.d/50-mica-docker.conf
+check "F1 the sysctl.d file turns on IPv4 and (when present) IPv6 forwarding" \
+    [ "$(sed 's/#.*//; /^[[:space:]]*$/d' "$SYSCTL")" = "$(printf 'net.ipv4.ip_forward = 1\n-net.ipv6.conf.all.forwarding = 1')" ]
+# start_pre against a fixture /proc/sys: the script's path prefix is rewritten.
+mkdir -p "$TMP/proc/sys/net/ipv4"
+echo 0 >"$TMP/proc/sys/net/ipv4/ip_forward"
+sed -e "s|/proc/sys/|$TMP/proc/sys/|; s|/usr/lib/sysctl.d/50-mica-docker.conf|$REPO_ROOT/$SYSCTL|" "$OPENRC" >"$TMP/docker.openrc"
+pre() { sh -c 'eerror() { echo "$*" >&2; }; . "$0"; start_pre' "$TMP/docker.openrc"; }
+forwards() { pre && [ "$(cat "$TMP/proc/sys/$1")" = 1 ]; }
+check "F2 the OpenRC start_pre writes the forwarding, skipping IPv6 the kernel lacks" forwards net/ipv4/ip_forward
+mkdir -p "$TMP/proc/sys/net/ipv6/conf/all"
+echo 0 >"$TMP/proc/sys/net/ipv6/conf/all/forwarding"
+check "F3 ... and writes IPv6 forwarding where it exists" forwards net/ipv6/conf/all/forwarding
+rm -rf "$TMP/proc/sys/net/ipv4"
+refuses() { ! pre; }
+check "F4 ... and fails when IPv4 forwarding is missing" refuses
+
 echo "RESULT: $FAIL_N failed, $PASS_N passed"
 [ "$FAIL_N" -eq 0 ]

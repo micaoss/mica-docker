@@ -81,10 +81,11 @@ else fail "U2 rc=$RC: $OUT / $(row moby) / $(row runc)"; fi
 if [ "$(field Version)" = 29.9.1-1 ] && [ "$(field Source-Date-Epoch)" != 1000000000 ]; then
     pass "U3 a new moby tag sets <Docker version>-1 and a new Source-Date-Epoch"
 else fail "U3 Version $(field Version), epoch $(field Source-Date-Epoch)"; fi
-if cmp -s deb/mica-docker.control <(sed "s/^Source-Date-Epoch: .*/Source-Date-Epoch: $(sed -n 's/^Source-Date-Epoch: //p' deb/mica-docker.control)/" "$FIX/deb/mica-docker.control") &&
+body() { grep -v -e '^Version: ' -e '^Source-Date-Epoch: ' "$1"; }
+if cmp -s <(body deb/mica-docker.control) <(body "$FIX/deb/mica-docker.control") &&
     grep -q "^Comment: moby docker-v29.9.1\.$" "$FIX/deb/copyright" && grep -q "^Comment: opencontainers/runc v1.5.2," "$FIX/deb/copyright"; then
     pass "U4 the description and deb/copyright name the new versions"
-else fail "U4 $(diff deb/mica-docker.control "$FIX/deb/mica-docker.control"; grep -n '^Comment: moby\|^Comment: opencontainers' "$FIX/deb/copyright")"; fi
+else fail "U4 $(diff <(body deb/mica-docker.control) <(body "$FIX/deb/mica-docker.control"); grep -n '^Comment: moby\|^Comment: opencontainers' "$FIX/deb/copyright")"; fi
 
 BEHIND="" run
 if [ "$RC" -eq 0 ] && says "$OUT" "upgrade.sh: unchanged" && [ "$(field Version)" = 29.9.1-1 ]; then

@@ -1,6 +1,6 @@
 Package: mica-docker
-Version: 29.9.1-1
-Source-Date-Epoch: 1792383840
+Version: 29.9.1-2
+Source-Date-Epoch: 1792449180
 Architecture: @ARCH@
 Maintainer: Mica OS <hi@micaos.dev>
 Section: admin
@@ -16,5 +16,8 @@ Description: Mica OS Docker engine
  mica-podman conflicts.
  .
  Nothing is enabled: micad enables docker.service from the container.enabled
- setting. dockerd execs nft for its firewall rules, so nftables is declared.
- mica-system provides the /mica/containers mount the configuration uses.
+ setting. /usr/lib/sysctl.d/50-mica-docker.conf turns on the IP forwarding
+ dockerd needs (systemd-sysctl applies it; the OpenRC script applies it before
+ dockerd starts). dockerd execs nft for its firewall rules, so nftables is
+ declared. mica-system provides the /mica/containers mount the configuration
+ uses.
