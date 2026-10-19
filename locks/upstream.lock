@@ -1,0 +1,10 @@
+# mica-lock v1
+# The Docker engine from these upstream trees, each at its newest release. A pin moves by setting the tag and its commit.
+source	libseccomp-dev	amd64	2.6.0-2	12326d36a510cafeda0f33d0a97439f7812e1e56128c4b79091142ce5cf07766	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libs/libseccomp/libseccomp-dev_2.6.0-2_amd64.deb
+source	libseccomp-dev	arm64	2.6.0-2	a4b5e33f3c609e1186ed4725d380a96372bb6a4976a94f7911411b4371180450	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libs/libseccomp/libseccomp-dev_2.6.0-2_arm64.deb
+git	cli	https://github.com/docker/cli.git	v29.9.1	dfc520dcc28994c4c699b9b219fd2f5a6bcec0ff
+git	compose	https://github.com/docker/compose.git	v5.6.0	42f48072bbf92ee9b0e43f9fdf2008d03546e7ca
+git	containerd	https://github.com/containerd/containerd.git	v2.4.2	b7a25261e029d68978bbf290df0a62fc819b3c51
+git	moby	https://github.com/moby/moby.git	docker-v29.9.1	b26fb77d3e7b01f9d21b89539c1ab428f5ca431f
+git	runc	https://github.com/opencontainers/runc.git	v1.5.2	29dd3dc2b13b4123162e5fe132504bb4b15569f1
+git	tini	https://github.com/krallin/tini.git	v0.19.0	de40ad007797e0dcd8b7126f27bb87401d224240

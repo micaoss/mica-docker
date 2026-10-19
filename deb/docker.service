@@ -1,0 +1,32 @@
+# dockerd on a systemd root. Not enabled by the package or the product: micad
+# enables, starts and stops it from the container.enabled setting, and talks to it
+# through the Docker API on /run/docker.sock. dockerd starts its own containerd.
+[Unit]
+Description=Docker engine
+Documentation=https://github.com/micaoss/mica-docker
+# After micad, so micad's application reset runs before the engine holds
+# /mica/containers. No network ordering and no socket activation: a device may run
+# offline, and its containers start without the network.
+After=micad.service
+RequiresMountsFor=/mica/containers
+StartLimitBurst=3
+StartLimitIntervalSec=60
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/dockerd
+ExecReload=/bin/kill -s HUP $MAINPID
+TimeoutStartSec=0
+Restart=always
+RestartSec=2
+LimitNPROC=infinity
+LimitCORE=infinity
+TasksMax=infinity
+# containerd and its shims are dockerd's to stop: live-restore is off, so stopping
+# dockerd stops its containers.
+Delegate=yes
+KillMode=process
+OOMScoreAdjust=-500
+
+[Install]
+WantedBy=multi-user.target

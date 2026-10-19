@@ -1,0 +1,5 @@
+# The packages the go stage links against (runc with libseccomp, docker-init static);
+# tools/dev-pins.sh resolves their closure.
+build-essential
+pkgconf
+libseccomp-dev

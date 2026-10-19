@@ -1,0 +1,97 @@
+name: upgrade
+# Weekly, and on demand: every pin to its latest release (tools/upgrade.sh, the
+# rule of README "Inputs"). When something moved, the change is pushed as
+# upgrade/<run>, built, packed and gated for both architectures by build.yml
+# (with make base-check), then main is fast-forwarded to it, the release is cut
+# and publish.yml publishes it. A red step stops before main moves and leaves the
+# branch for a person; main that moved meanwhile refuses the fast-forward.
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: upgrade
+  cancel-in-progress: false
+jobs:
+  upgrade:
+    runs-on: ubuntu-26.04
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.upgrade.outputs.changed }}
+      sha: ${{ steps.push.outputs.sha }}
+      branch: ${{ steps.push.outputs.branch }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Every pin to its latest release
+        id: upgrade
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          bash tools/upgrade.sh | tee "$RUNNER_TEMP/upgrade.log"
+          if [ "$(tail -n1 "$RUNNER_TEMP/upgrade.log")" = "upgrade.sh: changed" ]; then
+            echo changed=true >>"$GITHUB_OUTPUT"
+          else
+            echo changed=false >>"$GITHUB_OUTPUT"
+          fi
+      - name: Push the upgrade to its own branch
+        id: push
+        if: steps.upgrade.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          branch="upgrade/${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          { echo "Upgrade every pin to its latest release"
+            echo
+            grep -v -e '^upgrade.sh: changed$' "$RUNNER_TEMP/upgrade.log" | sed 's/^upgrade.sh: /- /'
+          } | git commit -q -F -
+          git push -q origin "HEAD:refs/heads/${branch}"
+          echo "sha=$(git rev-parse HEAD)" >>"$GITHUB_OUTPUT"
+          echo "branch=${branch}" >>"$GITHUB_OUTPUT"
+  build:
+    needs: upgrade
+    if: needs.upgrade.outputs.changed == 'true'
+    uses: ./.github/workflows/build.yml
+    with:
+      ref: ${{ needs.upgrade.outputs.sha }}
+  release:
+    needs: [upgrade, build]
+    runs-on: ubuntu-26.04
+    permissions:
+      contents: write
+    outputs:
+      tag: ${{ steps.cut.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.upgrade.outputs.sha }}
+          fetch-depth: 0
+      - name: Fast-forward main and cut the release
+        id: cut
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ needs.upgrade.outputs.sha }}
+          BRANCH: ${{ needs.upgrade.outputs.branch }}
+        run: |
+          set -euo pipefail
+          git push -q origin "${SHA}:refs/heads/main"
+          tag="$(date -u +%Y%m%d-%H%M)"
+          gh release create "${tag}" --target "${SHA}" --title "${tag}" --notes ""
+          git push -q origin --delete "${BRANCH}"
+          echo "tag=${tag}" >>"$GITHUB_OUTPUT"
+  publish:
+    needs: release
+    permissions:
+      contents: write
+      packages: write
+    uses: ./.github/workflows/publish.yml
+    with:
+      tag: ${{ needs.release.outputs.tag }}

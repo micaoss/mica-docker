@@ -1,0 +1,28 @@
+name: release
+# Runs only when a release is published; nothing here runs on a push. The
+# release is cut first with `gh release create <YYYYMMDD-HHMM> --target <commit
+# of main>`. The release's tag is checked, packed and gated for both
+# architectures, then publish.yml publishes it. A release upgrade.yml cuts is
+# published by upgrade.yml itself: a release made with the workflow's token
+# starts no other workflow.
+on:
+  release:
+    types: [published]
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.event.release.tag_name }}
+  cancel-in-progress: false
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    with:
+      ref: refs/tags/${{ github.event.release.tag_name }}
+  publish:
+    needs: build
+    permissions:
+      contents: write
+      packages: write
+    uses: ./.github/workflows/publish.yml
+    with:
+      tag: ${{ github.event.release.tag_name }}

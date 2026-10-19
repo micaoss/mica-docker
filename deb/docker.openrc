@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+# dockerd on an OpenRC root, under supervise-daemon. In no runlevel: micad adds,
+# starts and stops it from the container.enabled setting, and talks to it through
+# the Docker API on /run/docker.sock. dockerd starts its own containerd, writes
+# /run/docker.pid, and with live-restore off stops its containers when it stops.
+
+description="Docker engine"
+command=/usr/bin/dockerd
+command_args="-p /run/docker.pid"
+supervisor=supervise-daemon
+respawn_delay=2
+retry="TERM/60/KILL/10"
+rc_ulimit="-c unlimited -n 1048576 -u unlimited"
+output_logger="logger -t dockerd -p daemon.info"
+error_logger="logger -t dockerd -p daemon.err"
+
+# After micad, so micad's application reset runs before the engine holds
+# /mica/containers. No network ordering: a device may run offline, and its
+# containers start without the network.
+depend() {
+    need mica-mounts
+    after micad
+    use logger
+}

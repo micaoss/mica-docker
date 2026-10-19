@@ -1,0 +1,6 @@
+*
+!mica-docker.control
+!copyright
+!payload.manifest
+!docker.service
+!docker.openrc

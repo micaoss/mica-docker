@@ -1,0 +1,7 @@
+# The mica-build-env release and images the closure below was resolved against.
+# tools/dev-pins.sh check refuses a build when locks/mica-build-env.lock names others.
+RELEASE=20261019-0936
+IMAGE_GO=ghcr.io/micaoss/mica-build-env:go.20261019-0936@sha256:11ba8eb01cbefea43dd12e9be05b0986ef17b79e5650bb69f07c2f14708e9fc3
+SNAPSHOT=deb [check-valid-until=no] https://snapshot.debian.org/archive/debian/20261001T000000Z trixie main
+SNAPSHOT=deb [check-valid-until=no] https://snapshot.debian.org/archive/debian-security/20261001T000000Z trixie-security main
+SNAPSHOT=deb [check-valid-until=no] https://snapshot.debian.org/archive/debian/20261001T000000Z trixie-updates main

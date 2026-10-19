@@ -1,0 +1,104 @@
+name: build
+# Called by ci.yml and release.yml: offline checks, then mica-docker built,
+# packed, installed and run, and gated for amd64 and arm64 on native runners,
+# kept as the artifacts mica-docker-<arch>. `ref` is what every job checks out (release.yml
+# passes the release's tag; empty is the triggering commit). The engine's
+# compile caches are restored by exact key (arch, locks/mica-build-env.lock,
+# locks/upstream.lock, Dockerfile) and saved only when `save-cache` is true, which
+# ci.yml sets for pushes to main alone; every build step and gate still runs.
+on:
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        default: ''
+      save-cache:
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.ref }}
+      - name: Offline checks
+        run: make check
+      - name: Debian dependencies against the pinned mica-system-base release
+        run: make base-check
+  package:
+    needs: check
+    strategy:
+      matrix:
+        include:
+          - arch: amd64
+            runner: ubuntu-26.04
+          - arch: arm64
+            runner: ubuntu-26.04-arm
+    runs-on: ${{ matrix.runner }}
+    env:
+      MICA_ARCH: ${{ matrix.arch }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.ref }}
+      - name: Every lock in locks/ against its pinned release
+        run: make inputs
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Restore the engine compile caches
+        id: engine-cache
+        uses: actions/cache/restore@v6
+        with:
+          path: _out/cache/engine
+          key: engine-${{ matrix.arch }}-${{ hashFiles('locks/mica-build-env.lock', 'locks/upstream.lock', 'Dockerfile') }}
+      - name: Load the engine compile caches into the builder
+        if: steps.engine-cache.outputs.cache-hit == 'true'
+        run: bash tools/build-cache.sh restore _out/cache/engine
+      - name: The engine
+        run: make engine
+      - name: Pack
+        run: make deb
+      - name: The archive installed and run
+        run: make smoke
+      - name: The package version against the latest release (reuse or bump, read only)
+        run: bin/mica-tools pool guard "$MICA_ARCH" _out/debs/"$MICA_ARCH"/pool/*.deb
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Gate, with no-cache engine and archive rebuilds
+        run: bash tests/package-gate.sh --arch "$MICA_ARCH" --reproduce
+      - uses: actions/upload-artifact@v7
+        with:
+          name: mica-docker-${{ matrix.arch }}
+          path: _out/debs/${{ matrix.arch }}
+          if-no-files-found: error
+      - name: Collect the engine compile caches, own crates pruned
+        if: inputs.save-cache && steps.engine-cache.outputs.cache-hit != 'true'
+        run: bash tools/build-cache.sh save _out/cache/engine
+      - name: Save the engine compile caches
+        if: inputs.save-cache && steps.engine-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: _out/cache/engine
+          key: ${{ steps.engine-cache.outputs.cache-primary-key }}
+  gate:
+    needs: package
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.ref }}
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: mica-docker-*
+          path: _out/artifacts
+      - name: Gate over both architectures
+        run: |
+          set -euo pipefail
+          for arch in amd64 arm64; do
+            mkdir -p "_out/debs/$arch"
+            cp -r "_out/artifacts/mica-docker-$arch/." "_out/debs/$arch/"
+          done
+          bash tests/package-gate.sh

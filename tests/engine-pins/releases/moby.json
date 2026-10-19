@@ -1,0 +1,602 @@
+[
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-14T19:28:37Z",
+    "tag_name": "docker-v29.9.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-08T21:34:57Z",
+    "tag_name": "docker-v29.9.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-08T20:06:34Z",
+    "tag_name": "client/v0.6.2"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-10-07T20:11:47Z",
+    "tag_name": "docker-v29.9.0-rc.2"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-01T18:24:59Z",
+    "tag_name": "client/v0.6.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-01T17:59:25Z",
+    "tag_name": "api/v1.56.1"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-10-01T20:56:17Z",
+    "tag_name": "docker-v29.9.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-09-30T15:54:00Z",
+    "tag_name": "v25.0.18"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-09-30T20:28:33Z",
+    "tag_name": "docker-v29.8.2"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-09-15T17:05:26Z",
+    "tag_name": "docker-v29.8.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-09-03T22:31:49Z",
+    "tag_name": "docker-v29.8.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-09-03T21:03:01Z",
+    "tag_name": "client/v0.6.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-09-03T20:43:14Z",
+    "tag_name": "api/v1.56.0"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-08-28T20:48:41Z",
+    "tag_name": "docker-v29.8.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-08-06T10:35:19Z",
+    "tag_name": "docker-v29.7.2"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-07-31T17:36:24Z",
+    "tag_name": "docker-v29.7.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-07-30T21:38:11Z",
+    "tag_name": "docker-v29.7.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-07-27T19:09:03Z",
+    "tag_name": "client/v0.5.1"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-07-28T09:01:20Z",
+    "tag_name": "docker-v29.7.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-07-16T16:55:29Z",
+    "tag_name": "docker-v29.6.2"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-08-13T00:25:05Z",
+    "tag_name": "v25.0.17"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-06-26T12:29:14Z",
+    "tag_name": "docker-v29.6.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-06-18T20:43:10Z",
+    "tag_name": "docker-v29.6.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-06-18T19:36:11Z",
+    "tag_name": "client/v0.5.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-06-18T19:16:53Z",
+    "tag_name": "api/v1.55.0"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-06-12T18:43:50Z",
+    "tag_name": "docker-v29.6.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-06-12T16:53:15Z",
+    "tag_name": "client/v0.5.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-06-12T16:29:36Z",
+    "tag_name": "api/v1.55.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-06-03T18:50:17Z",
+    "tag_name": "docker-v29.5.3"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-05-20T18:02:30Z",
+    "tag_name": "docker-v29.5.2"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-05-18T17:10:35Z",
+    "tag_name": "docker-v29.5.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-05-14T21:37:30Z",
+    "tag_name": "docker-v29.5.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-08-13T00:17:23Z",
+    "tag_name": "v25.0.16"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-05-11T20:07:07Z",
+    "tag_name": "docker-v29.5.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-05-06T17:48:41Z",
+    "tag_name": "docker-v29.4.3"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-05-01T07:40:30Z",
+    "tag_name": "docker-v29.4.2"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-08-13T00:15:00Z",
+    "tag_name": "v25.0.15"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-04-20T16:45:55Z",
+    "tag_name": "docker-v29.4.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-04-20T14:49:11Z",
+    "tag_name": "client/v0.4.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-04-20T14:33:48Z",
+    "tag_name": "api/v1.54.2"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-04-07T09:22:47Z",
+    "tag_name": "docker-v29.4.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-04-03T14:06:43Z",
+    "tag_name": "client/v0.4.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-04-03T13:06:45Z",
+    "tag_name": "api/v1.54.1"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-04-03T15:34:09Z",
+    "tag_name": "docker-v29.4.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-03-25T17:46:19Z",
+    "tag_name": "docker-v29.3.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-03-05T15:27:21Z",
+    "tag_name": "docker-v29.3.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-03-05T13:54:51Z",
+    "tag_name": "client/v0.3.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-03-05T13:53:53Z",
+    "tag_name": "api/v1.54.0"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-02-27T20:26:30Z",
+    "tag_name": "docker-v29.3.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-02-02T18:16:53Z",
+    "tag_name": "docker-v29.2.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-01-26T21:09:53Z",
+    "tag_name": "docker-v29.2.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-01-26T19:06:49Z",
+    "tag_name": "client/v0.2.2"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-01-26T18:54:35Z",
+    "tag_name": "api/v1.53.0"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2026-01-19T13:49:55Z",
+    "tag_name": "docker-v29.2.0-rc.2"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-01-16T14:08:54Z",
+    "tag_name": "docker-v29.1.5"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-01-09T09:33:14Z",
+    "tag_name": "docker-v29.1.4"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2025-12-17T17:51:43Z",
+    "tag_name": "docker-v29.2.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-12-12T15:56:35Z",
+    "tag_name": "docker-v29.1.3"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-12-02T22:36:58Z",
+    "tag_name": "docker-v29.1.2"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-11-28T13:08:46Z",
+    "tag_name": "docker-v29.1.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-11-27T17:35:17Z",
+    "tag_name": "docker-v29.1.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-11-27T16:26:17Z",
+    "tag_name": "client/v0.2.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-11-27T13:48:48Z",
+    "tag_name": "client/v0.2.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-11-24T22:27:01Z",
+    "tag_name": "docker-v29.0.4"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-11-24T11:45:32Z",
+    "tag_name": "docker-v29.0.3"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-11-17T16:56:16Z",
+    "tag_name": "docker-v29.0.2"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2025-11-17T23:30:33Z",
+    "tag_name": "docker-v29.1.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-11-14T16:57:56Z",
+    "tag_name": "docker-v29.0.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-11-10T22:45:57Z",
+    "tag_name": "docker-v29.0.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-11-10T20:56:43Z",
+    "tag_name": "client/v0.1.0"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-11-10T20:44:19Z",
+    "tag_name": "api/v1.52.0"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2025-11-07T01:24:04Z",
+    "tag_name": "docker-v29.0.0-rc.3"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2025-11-10T11:28:07Z",
+    "tag_name": "client/v0.1.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2025-11-10T11:27:37Z",
+    "tag_name": "api/v1.52.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-08-13T00:12:27Z",
+    "tag_name": "v25.0.14"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-11-05T15:49:41Z",
+    "tag_name": "v28.5.2"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2025-10-31T19:46:33Z",
+    "tag_name": "docker-v29.0.0-rc.2"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2025-10-14T12:17:49Z",
+    "tag_name": "docker-v29.0.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-10-08T13:09:36Z",
+    "tag_name": "v28.5.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-10-02T20:12:31Z",
+    "tag_name": "v28.5.0"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2025-09-25T13:31:28Z",
+    "tag_name": "v28.5.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-09-03T21:52:07Z",
+    "tag_name": "v28.4.0"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2025-09-02T11:45:47Z",
+    "tag_name": "v28.4.0-rc.2"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2025-09-01T09:16:27Z",
+    "tag_name": "v28.4.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-09-04T14:34:06Z",
+    "tag_name": "v25.0.13"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-07-29T09:52:24Z",
+    "tag_name": "v28.3.3"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-07-15T18:32:42Z",
+    "tag_name": "v25.0.12"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-07-09T19:47:46Z",
+    "tag_name": "v28.3.2"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-07-02T23:33:55Z",
+    "tag_name": "v28.3.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-06-25T00:17:12Z",
+    "tag_name": "v28.3.0"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2025-06-20T19:01:28Z",
+    "tag_name": "v28.3.0-rc.2"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-06-18T23:19:19Z",
+    "tag_name": "v25.0.11"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2025-06-16T13:33:37Z",
+    "tag_name": "v28.3.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-05-30T15:14:55Z",
+    "tag_name": "v28.2.2"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-05-28T22:23:22Z",
+    "tag_name": "v28.2.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-05-28T17:47:06Z",
+    "tag_name": "v28.2.0"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2025-05-23T17:46:31Z",
+    "tag_name": "v28.2.0-rc.2"
+  },
+  {
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2025-05-19T20:23:56Z",
+    "tag_name": "v28.2.0-rc.1"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-05-15T21:23:43Z",
+    "tag_name": "v25.0.10"
+  },
+  {
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2025-05-15T21:18:47Z",
+    "tag_name": "v25.0.9"
+  }
+]

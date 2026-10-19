@@ -1,0 +1,5 @@
+{
+  "data-root": "/mica/containers/docker",
+  "log-driver": "local",
+  "firewall-backend": "nftables"
+}

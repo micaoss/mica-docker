@@ -1,0 +1,7 @@
+# mica-lock v1
+git	cli	https://github.com/docker/cli.git	v29.9.1	dfc520dcc28994c4c699b9b219fd2f5a6bcec0ff
+git	compose	https://github.com/docker/compose.git	v2.40.3	42f48072bbf92ee9b0e43f9fdf2008d03546e7ca
+git	containerd	https://github.com/containerd/containerd.git	v2.4.2	b7a25261e029d68978bbf290df0a62fc819b3c51
+git	moby	https://github.com/moby/moby.git	docker-v29.9.1	b26fb77d3e7b01f9d21b89539c1ab428f5ca431f
+git	runc	https://github.com/opencontainers/runc.git	v1.5.2	29dd3dc2b13b4123162e5fe132504bb4b15569f1
+git	tini	https://github.com/krallin/tini.git	v0.19.0	de40ad007797e0dcd8b7126f27bb87401d224240

@@ -1,0 +1,18 @@
+name: ci
+# Every push to main and pull request builds, packs and gates both
+# architectures; nothing is published. Only pushes to main save the engine
+# compile caches; pull requests restore them. Upgrades are upgrade.yml's.
+on:
+  push:
+    branches: [main]
+  pull_request:
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    with:
+      save-cache: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}

@@ -1,0 +1,6 @@
+# The Debian packages mica-docker needs at runtime: its Depends other than
+# mica-system, including those dpkg-shlibdeps derives. tools/base-check.sh
+# requires their closure to come from the pinned mica-system-base release.
+libc6
+libseccomp2
+nftables

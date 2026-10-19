@@ -1,0 +1,10 @@
+# The Debian snapshot the engine stages take their pinned build packages from:
+# the release and its updates and security pockets, at the moment the
+# mica-build-env images (20261019-0936) install their own packages from. It
+# must not be older than those images, or apt refuses to resolve downgrades
+# against their packages. The Base apt rows (the root's snapshot) cannot be
+# used for that reason; the runtime contract is kept by the declared Depends
+# floors, which base-check verifies against the versions Base pins.
+deb [check-valid-until=no] https://snapshot.debian.org/archive/debian/20261001T000000Z trixie main
+deb [check-valid-until=no] https://snapshot.debian.org/archive/debian-security/20261001T000000Z trixie-security main
+deb [check-valid-until=no] https://snapshot.debian.org/archive/debian/20261001T000000Z trixie-updates main

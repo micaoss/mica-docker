@@ -1,0 +1,16 @@
+# mica-inputs v1
+# What decides the bytes of mica-docker: the pinned upstream trees and the Debian
+# build closure, the engine build, the configuration it ships, and the pack (the
+# control template declares the version and SOURCE_DATE_EPOCH). The build-env
+# images are not inputs: a toolchain move that changes the bytes is caught by the
+# byte comparison of `mica-tools pool guard`.
+package mica-docker
+path locks/upstream.lock
+path Dockerfile
+path Dockerfile.dockerignore
+path build.sh
+path tools/package.sh
+path tools/stamp.sh
+path tools/dev-pins.sh
+path overlay
+path pins
