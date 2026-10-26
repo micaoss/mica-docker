@@ -1,47 +1,50 @@
 # mica-lock v1
-# mica-system-base.lock: mica-system-base 20261019-1007, written when the release was published.
-release	mica-system-base	20261019-1007	53f892a7192af6a6072fcb1b20c739462244718d
-image	mica-system-base	rootfs	amd64	ghcr.io/micaoss/mica-system-base@sha256:79f3b6b959622e8a01b93c87cabaaadc426acc703bc9ec0ce7fdbda900cf076b
-image	mica-system-base	rootfs	arm64	ghcr.io/micaoss/mica-system-base@sha256:29d4d4195839ca6c519a6c7880c0c94d1fc770202652f15fff4aa01006bd791b
-image	mica-system-base	rootfs	armhf	ghcr.io/micaoss/mica-system-base@sha256:2b18bd83dca8788cee0114a7261e8e64e3b4518b98bd9c13a621a495c96c8d4b
-image	mica-system-base	rootfs	index	ghcr.io/micaoss/mica-system-base:rootfs.20261019-1007@sha256:41e26cff9d2fe44af4e5c6e59207ded200b0fa684247ca550c801312c43396c0
-pool	amd64	ghcr.io/micaoss/mica-system-base:pool.amd64.20261019-1007@sha256:561359f9ce0126a48588f1eb5fd55b04e69f5e64344dacd5f63df3bcadd207f7
-pool	arm64	ghcr.io/micaoss/mica-system-base:pool.arm64.20261019-1007@sha256:4000a1617ab6ada37af556b7f5dbedc73611e77daf905362a7444b7485c5819d
-pool	armhf	ghcr.io/micaoss/mica-system-base:pool.armhf.20261019-1007@sha256:0ce4952bb3e6d3bed46daaa9cc945f9ab7c10b09a212b91a7ca3c0434ed4a0f3
-package	mica-bluetooth	amd64	5.82-mica1	e5399d67a73a6f41e5b0ff1a5722483a7e399df19ee80f1772526eb1677b7bc7
-package	mica-bluetooth	arm64	5.82-mica1	e5399d67a73a6f41e5b0ff1a5722483a7e399df19ee80f1772526eb1677b7bc7
-package	mica-bluetooth	armhf	5.82-mica1	e5399d67a73a6f41e5b0ff1a5722483a7e399df19ee80f1772526eb1677b7bc7
+# mica-system-base.lock: mica-system-base 20261025-0032, written when the release was published.
+release	mica-system-base	20261025-0032	40684664f424e3610d6faf12a2cd849288bdffa2
+image	mica-system-base	rootfs	amd64	ghcr.io/micaoss/mica-system-base@sha256:a277c683343146c8181ae6826ddf64cf65f05721ccfb9ec3a36a6d9525a397b8
+image	mica-system-base	rootfs	arm64	ghcr.io/micaoss/mica-system-base@sha256:e8fcf3728fc851d8f14f35675c2105d1514eac4d2a1cb72bdf8c7ab3aaa9fd4b
+image	mica-system-base	rootfs	armhf	ghcr.io/micaoss/mica-system-base@sha256:1b45bfeabc93b9ab581f54a54ed20f8a285f1410e4dc8d0a164d943de4ae7bdc
+image	mica-system-base	rootfs	index	ghcr.io/micaoss/mica-system-base:rootfs.20261025-0032@sha256:3cbb7946c46ca53a2e5913fd409662202d586e13a9aa3798d8b80a1762f9d570
+pool	amd64	ghcr.io/micaoss/mica-system-base:pool.amd64.20261025-0032@sha256:497e96ea836d17e99de2de82cccb076682ecbc4301512dcc00aadc1a8c97608d
+pool	arm64	ghcr.io/micaoss/mica-system-base:pool.arm64.20261025-0032@sha256:65be5eb64f136f7002f628a40846b925c5c1b226b265ef189e2fab223d78c6ca
+pool	armhf	ghcr.io/micaoss/mica-system-base:pool.armhf.20261025-0032@sha256:bde8d3bcdd7cfc56f52718d7cff4071d229e85a4b16980b20deb85cb669b10ec
+package	mica-bluetooth	amd64	5.82-mica2	40f474fd9e53beb175baa4c1c880ae5c9089dd868fff71c0b964a1a2455fe735
+package	mica-bluetooth	arm64	5.82-mica2	40f474fd9e53beb175baa4c1c880ae5c9089dd868fff71c0b964a1a2455fe735
+package	mica-bluetooth	armhf	5.82-mica2	40f474fd9e53beb175baa4c1c880ae5c9089dd868fff71c0b964a1a2455fe735
 package	mica-busybox	amd64	1.38.0-mica1	3d75526ff39a59ff5ad1ea6fe449ff634e5d549ca3e228a20334eb97bb0631ba
 package	mica-busybox	arm64	1.38.0-mica1	79c1628639f6226ac68c3f09f34bf562938537e8c29103189ffc058fea027a0b
 package	mica-busybox	armhf	1.38.0-mica1	0039fc8761f01aba8f569d40f2afbf6e5b8396424dc988a65d69b22ee3014268
 package	mica-ca-trust	amd64	20250419-mica1	ddfde2c8c1766c6db8967388f75776b68967675bd5fc06b0f0713df1c9017cd4
 package	mica-ca-trust	arm64	20250419-mica1	ddfde2c8c1766c6db8967388f75776b68967675bd5fc06b0f0713df1c9017cd4
 package	mica-ca-trust	armhf	20250419-mica1	ddfde2c8c1766c6db8967388f75776b68967675bd5fc06b0f0713df1c9017cd4
-package	mica-mdev	amd64	1.38.0-mica1	77cde3f98e4575237bed7606fa85bdeb9424d85cdd10b7133894d1b4ac2608e4
-package	mica-mdev	arm64	1.38.0-mica1	77cde3f98e4575237bed7606fa85bdeb9424d85cdd10b7133894d1b4ac2608e4
-package	mica-mdev	armhf	1.38.0-mica1	77cde3f98e4575237bed7606fa85bdeb9424d85cdd10b7133894d1b4ac2608e4
-package	mica-openrc	amd64	0.56-mica1	c1baf7b1611fd7e4bebda908e47c6f86aa80a0bd272f4c3ed58dd082a604a761
-package	mica-openrc	arm64	0.56-mica1	c1baf7b1611fd7e4bebda908e47c6f86aa80a0bd272f4c3ed58dd082a604a761
-package	mica-openrc	armhf	0.56-mica1	c1baf7b1611fd7e4bebda908e47c6f86aa80a0bd272f4c3ed58dd082a604a761
-package	mica-ssh	amd64	2025.89-mica1	122b334a3b289a558f15a8b619b8e4e0ff9bc67ab045c3edef19199a2f4f3d6f
-package	mica-ssh	arm64	2025.89-mica1	122b334a3b289a558f15a8b619b8e4e0ff9bc67ab045c3edef19199a2f4f3d6f
-package	mica-ssh	armhf	2025.89-mica1	122b334a3b289a558f15a8b619b8e4e0ff9bc67ab045c3edef19199a2f4f3d6f
+package	mica-mdev	amd64	1.38.0-mica2	df969c0f7d827789e6884807c12501f17613303b946ffe69c64b711b058f8b9c
+package	mica-mdev	arm64	1.38.0-mica2	df969c0f7d827789e6884807c12501f17613303b946ffe69c64b711b058f8b9c
+package	mica-mdev	armhf	1.38.0-mica2	df969c0f7d827789e6884807c12501f17613303b946ffe69c64b711b058f8b9c
+package	mica-openrc	amd64	0.56-mica9	b801c2353813d411fd4e4b988c1ee02eb20d607296a9166f08d29c2f6debab52
+package	mica-openrc	arm64	0.56-mica9	b801c2353813d411fd4e4b988c1ee02eb20d607296a9166f08d29c2f6debab52
+package	mica-openrc	armhf	0.56-mica9	b801c2353813d411fd4e4b988c1ee02eb20d607296a9166f08d29c2f6debab52
+package	mica-openssh	amd64	10.0p1-mica1	e00d2210485c9210a1766de6eda1612e5e6c293c34ed843a54423b96ec5d2f6a
+package	mica-openssh	arm64	10.0p1-mica1	875ffd236e702222ed43b65474e98819ebf48ede4146d36096a732dc9c0997b1
+package	mica-openssh	armhf	10.0p1-mica1	a668f30b3415116ad6620f07713b47ea63c75ad1c1a81739e644706edbd73c6f
+package	mica-ssh	amd64	2025.89-mica2	8125299158e04bf9544ed890ec0237c46624668c75d8382973f5ba3fe08b48e8
+package	mica-ssh	arm64	2025.89-mica2	8125299158e04bf9544ed890ec0237c46624668c75d8382973f5ba3fe08b48e8
+package	mica-ssh	armhf	2025.89-mica2	8125299158e04bf9544ed890ec0237c46624668c75d8382973f5ba3fe08b48e8
 package	mica-storage-ubi	armhf	13.8+deb13u7-mica1	649fdb27359652955dcdfec9dc4715d1b37196fb4895964b37a9abfd3ffac39e
-package	mica-system	amd64	13.8+deb13u7-mica1	a2d187a8f4cca5dc3ebbd666c37181109a8aef85da245bd33db5bae3982954c4
-package	mica-system	arm64	13.8+deb13u7-mica1	a2d187a8f4cca5dc3ebbd666c37181109a8aef85da245bd33db5bae3982954c4
-package	mica-system	armhf	13.8+deb13u7-mica1	a2d187a8f4cca5dc3ebbd666c37181109a8aef85da245bd33db5bae3982954c4
-package	mica-systemd	amd64	257.13-mica1	4cd8b73c2efa20744978c7f6af13bef8f1984e38106019ece0877e84311d8c1c
-package	mica-systemd	arm64	257.13-mica1	4cd8b73c2efa20744978c7f6af13bef8f1984e38106019ece0877e84311d8c1c
-package	mica-systemd	armhf	257.13-mica1	4cd8b73c2efa20744978c7f6af13bef8f1984e38106019ece0877e84311d8c1c
+package	mica-system	amd64	13.8+deb13u7-mica5	e0da6bded8d2479b73e8d179751f1f9d198ad7e1e55137a8b98ccceca4b5ddb9
+package	mica-system	arm64	13.8+deb13u7-mica5	e0da6bded8d2479b73e8d179751f1f9d198ad7e1e55137a8b98ccceca4b5ddb9
+package	mica-system	armhf	13.8+deb13u7-mica5	e0da6bded8d2479b73e8d179751f1f9d198ad7e1e55137a8b98ccceca4b5ddb9
+package	mica-systemd	amd64	257.13-mica6	f634a23e277f6bf667174789947de60ff375a156bfbe5b57e04bbaea8cef9566
+package	mica-systemd	arm64	257.13-mica6	f634a23e277f6bf667174789947de60ff375a156bfbe5b57e04bbaea8cef9566
+package	mica-systemd	armhf	257.13-mica6	f634a23e277f6bf667174789947de60ff375a156bfbe5b57e04bbaea8cef9566
 package	mica-systemd-boot	amd64	257.13-mica1	a0f9b716c6430fc798b30a9d5aaac7155d744cafdfea40335beaab804efaa259
 package	mica-systemd-boot	arm64	257.13-mica1	fdababf63fbceaf121d699b982b1dc59a1f8641285a4583dd7650e6834e5ff36
 package	mica-tzdata	amd64	2026c-mica1	348b813135700a5bfa75bfd30c5180fc5ea4261afbd2e682e766cba6159a4327
 package	mica-tzdata	arm64	2026c-mica1	348b813135700a5bfa75bfd30c5180fc5ea4261afbd2e682e766cba6159a4327
 package	mica-tzdata	armhf	2026c-mica1	348b813135700a5bfa75bfd30c5180fc5ea4261afbd2e682e766cba6159a4327
-package	mica-wifi	amd64	2.12-mica1	cd2eb7728f9d7471a164748cd6c9ba2237a77ae4ce0ca2f740ba123de00be91f
-package	mica-wifi	arm64	2.12-mica1	e23b533a0b0176515aa293620aef682d4846bbfd2438fd00b54cff24bf25796e
-package	mica-wifi-ap	amd64	2.12-mica1	516fd1d1cba342a5d5c631212e25ba7471001921f0d526c523b1e29ebbcfa6cd
-package	mica-wifi-ap	arm64	2.12-mica1	69fa350bea8000e1d9a4bffdb7025005e3d75184e899e8dfe9bc14fa905e8ae8
+package	mica-wifi	amd64	2.12-mica2	f9b66dc4003db5ab8cc0eff7f83c4b0ca8d7ff9d54d75c17b5d17f62b34d9b91
+package	mica-wifi	arm64	2.12-mica2	613f47f681476cd4b8213181bcab4c0e2ce7d2b95527b82e817c5c5460bd8d11
+package	mica-wifi-ap	amd64	2.12-mica2	204807e5ee6fc6eb06a614e0edd00d1b18ad4964a77f173513cf219319e0f37b
+package	mica-wifi-ap	arm64	2.12-mica2	bee7ec8bf1eeb07bdaaa044b1c608a87cf7428980ad22d35ca736e57cb418ea0
 upstream	alsa-utils	amd64	1.2.14-1	1e2b5f31fc826e1af25e2a12e37cd8d361ff25feaf224c6bbef3cc5d6cd2596b	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/a/alsa-utils/alsa-utils_1.2.14-1_amd64.deb	alsa-utils
 upstream	alsa-utils	arm64	1.2.14-1	485fdd5ff4232fcc761ee4ca2f6e8be7572783e696a0d595ccffcba324db1026	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/a/alsa-utils/alsa-utils_1.2.14-1_arm64.deb	alsa-utils
 upstream	alsa-utils	armhf	1.2.14-1	b82522ee7c58575368cd7c1ef3852ed1d94cc0973f2ffa1f13de4e4aa39a53c0	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/a/alsa-utils/alsa-utils_1.2.14-1_armhf.deb	alsa-utils
@@ -214,9 +217,9 @@ upstream	libgomp1	armhf	14.2.0-19	00e56cbc41157ce7139b758b422133ab2a75bdfc71ee5c
 upstream	libgpiod3	amd64	2.2.1-2+deb13u1	e2900fafeac756d8a83d8feba6f6b757cf6bdb5c56e1e3621d776ecbca20d3ad	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libg/libgpiod/libgpiod3_2.2.1-2+deb13u1_amd64.deb	gpiod
 upstream	libgpiod3	arm64	2.2.1-2+deb13u1	fd2323e12f32f6762dcb04fb10d643f190c0419fef1bcb1acb549c53b57920d7	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libg/libgpiod/libgpiod3_2.2.1-2+deb13u1_arm64.deb	gpiod
 upstream	libgpiod3	armhf	2.2.1-2+deb13u1	7e30845cf21cc48713741c245e1ca5218cb9953199496f131d9f7f246d551976	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libg/libgpiod/libgpiod3_2.2.1-2+deb13u1_armhf.deb	gpiod
-upstream	libgssapi-krb5-2	amd64	1.21.3-5+deb13u1	30847c1fde4240567d7ed3aeab4f655dd591203758b857e85e824045aae70299	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libgssapi-krb5-2_1.21.3-5+deb13u1_amd64.deb	bind9-dnsutils,curl,iproute2,lsof
-upstream	libgssapi-krb5-2	arm64	1.21.3-5+deb13u1	70803e8f5b9dd0a7167671bdd0b3cd05642384c1fc49e8270d340d85bf6c7d4c	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libgssapi-krb5-2_1.21.3-5+deb13u1_arm64.deb	bind9-dnsutils,curl,iproute2,lsof
-upstream	libgssapi-krb5-2	armhf	1.21.3-5+deb13u1	df4ca163a4d682caac2e1fca14d83b6fac3899829856f62fe81f45dc578c7c70	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libgssapi-krb5-2_1.21.3-5+deb13u1_armhf.deb	bind9-dnsutils,curl,iproute2,lsof
+upstream	libgssapi-krb5-2	amd64	1.21.3-5+deb13u1	30847c1fde4240567d7ed3aeab4f655dd591203758b857e85e824045aae70299	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libgssapi-krb5-2_1.21.3-5+deb13u1_amd64.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
+upstream	libgssapi-krb5-2	arm64	1.21.3-5+deb13u1	70803e8f5b9dd0a7167671bdd0b3cd05642384c1fc49e8270d340d85bf6c7d4c	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libgssapi-krb5-2_1.21.3-5+deb13u1_arm64.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
+upstream	libgssapi-krb5-2	armhf	1.21.3-5+deb13u1	df4ca163a4d682caac2e1fca14d83b6fac3899829856f62fe81f45dc578c7c70	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libgssapi-krb5-2_1.21.3-5+deb13u1_armhf.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
 upstream	libhogweed6t64	amd64	3.10.1-1	b059ed155115ac09da295322de48ee1ed58ef5fa45edcc9e12ff0e94636ef25f	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/n/nettle/libhogweed6t64_3.10.1-1_amd64.deb	curl
 upstream	libhogweed6t64	arm64	3.10.1-1	cb92d5a51c4fd6c7b7cbb62aaa60c7af830d0bea5b410fb1f47ee685e26944d1	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/n/nettle/libhogweed6t64_3.10.1-1_arm64.deb	curl
 upstream	libhogweed6t64	armhf	3.10.1-1	1c9ff2e23a6050f1d192651c5fd1241613ac2121c0ab38eb94800dc827a88e01	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/n/nettle/libhogweed6t64_3.10.1-1_armhf.deb	curl
@@ -241,21 +244,21 @@ upstream	libjq1	armhf	1.7.1-6+deb13u3	5b60676b66ed61a61f88dca8bf096707621fb1f2c2
 upstream	libjson-c5	amd64	0.18+ds-1	4fbd5fb4d54c626f05d68abf38a31533fbf1bf4a87068696abe041ee9c974fe0	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/j/json-c/libjson-c5_0.18+ds-1_amd64.deb	bind9-dnsutils,libjson-c5
 upstream	libjson-c5	arm64	0.18+ds-1	f631829107005b15c2ca5c48ac74bc2df437c7eb608756eb865b147985f7bb45	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/j/json-c/libjson-c5_0.18+ds-1_arm64.deb	bind9-dnsutils,libjson-c5
 upstream	libjson-c5	armhf	0.18+ds-1	4cba3cadc8f8b9e120f9bbce62be9b811759abf41f4675b4851d55484a51eb2e	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/j/json-c/libjson-c5_0.18+ds-1_armhf.deb	bind9-dnsutils,libjson-c5
-upstream	libk5crypto3	amd64	1.21.3-5+deb13u1	7da07ee674b47f1f0be7cc89317c25310086a1f1761217d0f72e6ae2c5a69b84	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libk5crypto3_1.21.3-5+deb13u1_amd64.deb	bind9-dnsutils,curl,iproute2,lsof
-upstream	libk5crypto3	arm64	1.21.3-5+deb13u1	2453e8d4fa3b91b868d5bc10e84a15ad9c7bc4e4cb49379cb1f560bdce50db4a	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libk5crypto3_1.21.3-5+deb13u1_arm64.deb	bind9-dnsutils,curl,iproute2,lsof
-upstream	libk5crypto3	armhf	1.21.3-5+deb13u1	87662cf065fc7f4d97c8e6bba624e27ebb74dc4b019cb6060be2a36c3f8fa1ec	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libk5crypto3_1.21.3-5+deb13u1_armhf.deb	bind9-dnsutils,curl,iproute2,lsof
-upstream	libkeyutils1	amd64	1.6.3-6	0b11ad17be0300b63ad4eeb4c6450fed24d34b7b740f23e5363dcb29ee6d5eba	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/keyutils/libkeyutils1_1.6.3-6_amd64.deb	bind9-dnsutils,curl,iproute2,lsof
-upstream	libkeyutils1	arm64	1.6.3-6	5e680f317a6613161986417fb3ed63007c9228343f5ac2348551b103cc7fd7b4	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/keyutils/libkeyutils1_1.6.3-6_arm64.deb	bind9-dnsutils,curl,iproute2,lsof
-upstream	libkeyutils1	armhf	1.6.3-6	e9b0cdf27e1e85c1531220c1e5d93caac86d997b70f7e2ac63184c96c1184107	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/keyutils/libkeyutils1_1.6.3-6_armhf.deb	bind9-dnsutils,curl,iproute2,lsof
+upstream	libk5crypto3	amd64	1.21.3-5+deb13u1	7da07ee674b47f1f0be7cc89317c25310086a1f1761217d0f72e6ae2c5a69b84	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libk5crypto3_1.21.3-5+deb13u1_amd64.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
+upstream	libk5crypto3	arm64	1.21.3-5+deb13u1	2453e8d4fa3b91b868d5bc10e84a15ad9c7bc4e4cb49379cb1f560bdce50db4a	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libk5crypto3_1.21.3-5+deb13u1_arm64.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
+upstream	libk5crypto3	armhf	1.21.3-5+deb13u1	87662cf065fc7f4d97c8e6bba624e27ebb74dc4b019cb6060be2a36c3f8fa1ec	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libk5crypto3_1.21.3-5+deb13u1_armhf.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
+upstream	libkeyutils1	amd64	1.6.3-6	0b11ad17be0300b63ad4eeb4c6450fed24d34b7b740f23e5363dcb29ee6d5eba	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/keyutils/libkeyutils1_1.6.3-6_amd64.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
+upstream	libkeyutils1	arm64	1.6.3-6	5e680f317a6613161986417fb3ed63007c9228343f5ac2348551b103cc7fd7b4	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/keyutils/libkeyutils1_1.6.3-6_arm64.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
+upstream	libkeyutils1	armhf	1.6.3-6	e9b0cdf27e1e85c1531220c1e5d93caac86d997b70f7e2ac63184c96c1184107	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/keyutils/libkeyutils1_1.6.3-6_armhf.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
 upstream	libkmod2	amd64	34.2-2	ee6c50ebac79aa9795e8bf9aa01d94c99984d09d22598c66be0f8ba917b62179	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/kmod/libkmod2_34.2-2_amd64.deb	alsa-utils,bluez,i2c-tools,kmod,pciutils,udev
 upstream	libkmod2	arm64	34.2-2	01d2bf4ead7f6da5aca7f1ecc108cbe858a349ca55368742ead758fa7383e10a	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/kmod/libkmod2_34.2-2_arm64.deb	alsa-utils,bluez,i2c-tools,kmod,pciutils,udev
 upstream	libkmod2	armhf	34.2-2	049f04cb6d8903d6fe1d078cc7e7103be132ea640356a607cf94426fe919e513	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/kmod/libkmod2_34.2-2_armhf.deb	alsa-utils,bluez,i2c-tools,kmod,pciutils,udev
-upstream	libkrb5-3	amd64	1.21.3-5+deb13u1	47d71d6a7f2e59b9bae5f89602397594805113b95889ad18fa703cd53abafc97	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libkrb5-3_1.21.3-5+deb13u1_amd64.deb	bind9-dnsutils,curl,iproute2,lsof
-upstream	libkrb5-3	arm64	1.21.3-5+deb13u1	1f5c46480abf894f662d894696c8a6c6510c2b20616cd453e88b27b11d3be25d	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libkrb5-3_1.21.3-5+deb13u1_arm64.deb	bind9-dnsutils,curl,iproute2,lsof
-upstream	libkrb5-3	armhf	1.21.3-5+deb13u1	988151350dfb736c7bb461ffb24bf136aeae72842838270f44d482b7f70d8167	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libkrb5-3_1.21.3-5+deb13u1_armhf.deb	bind9-dnsutils,curl,iproute2,lsof
-upstream	libkrb5support0	amd64	1.21.3-5+deb13u1	3a0acd8b37955c0e102c756b52c97df2a31f67b96453c35dab70df218d309117	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libkrb5support0_1.21.3-5+deb13u1_amd64.deb	bind9-dnsutils,curl,iproute2,lsof
-upstream	libkrb5support0	arm64	1.21.3-5+deb13u1	6381bcb54e58854f9ebac2dfa580c3d6112d01b4ca3f725e7263b9374f79608e	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libkrb5support0_1.21.3-5+deb13u1_arm64.deb	bind9-dnsutils,curl,iproute2,lsof
-upstream	libkrb5support0	armhf	1.21.3-5+deb13u1	10a796a3a4ed1891ef7dbe417f6c435f95214f9916a6ea2e78aaefe87f5fe8cf	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libkrb5support0_1.21.3-5+deb13u1_armhf.deb	bind9-dnsutils,curl,iproute2,lsof
+upstream	libkrb5-3	amd64	1.21.3-5+deb13u1	47d71d6a7f2e59b9bae5f89602397594805113b95889ad18fa703cd53abafc97	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libkrb5-3_1.21.3-5+deb13u1_amd64.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
+upstream	libkrb5-3	arm64	1.21.3-5+deb13u1	1f5c46480abf894f662d894696c8a6c6510c2b20616cd453e88b27b11d3be25d	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libkrb5-3_1.21.3-5+deb13u1_arm64.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
+upstream	libkrb5-3	armhf	1.21.3-5+deb13u1	988151350dfb736c7bb461ffb24bf136aeae72842838270f44d482b7f70d8167	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libkrb5-3_1.21.3-5+deb13u1_armhf.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
+upstream	libkrb5support0	amd64	1.21.3-5+deb13u1	3a0acd8b37955c0e102c756b52c97df2a31f67b96453c35dab70df218d309117	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libkrb5support0_1.21.3-5+deb13u1_amd64.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
+upstream	libkrb5support0	arm64	1.21.3-5+deb13u1	6381bcb54e58854f9ebac2dfa580c3d6112d01b4ca3f725e7263b9374f79608e	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libkrb5support0_1.21.3-5+deb13u1_arm64.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
+upstream	libkrb5support0	armhf	1.21.3-5+deb13u1	10a796a3a4ed1891ef7dbe417f6c435f95214f9916a6ea2e78aaefe87f5fe8cf	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/k/krb5/libkrb5support0_1.21.3-5+deb13u1_armhf.deb	bind9-dnsutils,curl,iproute2,libgssapi-krb5-2,lsof
 upstream	libldap2	amd64	2.6.10+dfsg-1	60069e4a550ca890113fa89d3001417781b18e146ec5d637d31e368dec9909bd	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openldap/libldap2_2.6.10+dfsg-1_amd64.deb	curl
 upstream	libldap2	arm64	2.6.10+dfsg-1	38fae6af20d41e4b0a8ea1b96d0b81a7a5551a61595bc866c9af870eadfdf1bd	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openldap/libldap2_2.6.10+dfsg-1_arm64.deb	curl
 upstream	libldap2	armhf	2.6.10+dfsg-1	55eff2ef6cfd633f4477cc28347b3b94ffb43133204665ba204679f08460dee1	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openldap/libldap2_2.6.10+dfsg-1_armhf.deb	curl
@@ -370,9 +373,9 @@ upstream	libseccomp2	armhf	2.6.0-2	b4478752c51ce282cb72225ee66f1915be15b888d8fe5
 upstream	libssh2-1t64	amd64	1.11.1-1+deb13u2	dbb1024c192d4d292b7cfa902b96076cfe81b56a5eed4fb28da36e8bf543e49a	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libs/libssh2/libssh2-1t64_1.11.1-1+deb13u2_amd64.deb	curl
 upstream	libssh2-1t64	arm64	1.11.1-1+deb13u2	245565f4ce5493d67a3c54e26bc3d9cf28b1b70eeb912de7cda61af52268017d	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libs/libssh2/libssh2-1t64_1.11.1-1+deb13u2_arm64.deb	curl
 upstream	libssh2-1t64	armhf	1.11.1-1+deb13u2	a52c469d5574d2d7aebc44ccfadb05bd43398d3f158c8bcbc1b53ada37d71e61	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libs/libssh2/libssh2-1t64_1.11.1-1+deb13u2_armhf.deb	curl
-upstream	libssl3t64	amd64	3.5.7-1~deb13u2	916f7f40b34a06e6ebfaefcdab331bff458328411da672598f126a760472467d	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/libssl3t64_3.5.7-1~deb13u2_amd64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
-upstream	libssl3t64	arm64	3.5.7-1~deb13u2	ec131326aa9fa9ec934eca386bc7991f328fe383eaefd3e43bd8901a9199c5ae	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/libssl3t64_3.5.7-1~deb13u2_arm64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
-upstream	libssl3t64	armhf	3.5.7-1~deb13u2	94538529b1471c2055476df47fbc29a67a734c7c9d7f1fb44fd54c97e43c40c5	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/libssl3t64_3.5.7-1~deb13u2_armhf.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
+upstream	libssl3t64	amd64	3.5.7-1~deb13u2	916f7f40b34a06e6ebfaefcdab331bff458328411da672598f126a760472467d	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/libssl3t64_3.5.7-1~deb13u2_amd64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
+upstream	libssl3t64	arm64	3.5.7-1~deb13u2	ec131326aa9fa9ec934eca386bc7991f328fe383eaefd3e43bd8901a9199c5ae	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/libssl3t64_3.5.7-1~deb13u2_arm64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
+upstream	libssl3t64	armhf	3.5.7-1~deb13u2	94538529b1471c2055476df47fbc29a67a734c7c9d7f1fb44fd54c97e43c40c5	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/libssl3t64_3.5.7-1~deb13u2_armhf.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
 upstream	libstdc++6	amd64	14.2.0-19	ab1fa05837aa7a92aae748fd07a18a35f7d18bb4a71c4724fe2bbf0e32089de0	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/g/gcc-14/libstdc++6_14.2.0-19_amd64.deb	bind9-dnsutils,gdisk,gpiod,tmux,zstd
 upstream	libstdc++6	arm64	14.2.0-19	6669b0c52a2e7c6af9adfdabce3ff6e286065cdfbc7b85280862b5f799daebee	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/g/gcc-14/libstdc++6_14.2.0-19_arm64.deb	bind9-dnsutils,gdisk,gpiod,tmux,zstd
 upstream	libstdc++6	armhf	14.2.0-19	9c82eecc30961a3da3e062c0dba8ce076736059f4b8e7794c803985e75aea48b	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/g/gcc-14/libstdc++6_14.2.0-19_armhf.deb	bind9-dnsutils,gdisk,gpiod,tmux,zstd
@@ -410,9 +413,12 @@ upstream	libusb-1.0-0	armhf	2:1.0.28-1	ca1ea93234c82890d7faac757802bc6c2f590dded
 upstream	libuv1t64	amd64	1.50.0-2	5fec8035002e0c745b64d1c5b3e1dc42790d1a77574315b976cf3e4aab9ddc0a	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libu/libuv1/libuv1t64_1.50.0-2_amd64.deb	bind9-dnsutils
 upstream	libuv1t64	arm64	1.50.0-2	a9be0f24d7686ba94a6ef4f3c638079c6b39c4263306860d51046c4125d065f4	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libu/libuv1/libuv1t64_1.50.0-2_arm64.deb	bind9-dnsutils
 upstream	libuv1t64	armhf	1.50.0-2	57f61b7357e0db286e1267e318193ad4a9f7c675051f6186aeca658c14757419	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libu/libuv1/libuv1t64_1.50.0-2_armhf.deb	bind9-dnsutils
-upstream	libwrap0	amd64	7.6.q-36	cde12afa15d6b1556c5e0564d22edf3b99e6b8fa94c59ccd8b8eebbb62dc19ec	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/t/tcp-wrappers/libwrap0_7.6.q-36_amd64.deb	socat
-upstream	libwrap0	arm64	7.6.q-36	fd2e54582a07fba9c8a6f78c68dcc6d3c8cf1c70632a68124394bde4dccf52ea	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/t/tcp-wrappers/libwrap0_7.6.q-36_arm64.deb	socat
-upstream	libwrap0	armhf	7.6.q-36	c2cff944202551096ebdc23c3b28f594b966502c0eced5fdc8db7ef9f1712bc0	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/t/tcp-wrappers/libwrap0_7.6.q-36_armhf.deb	socat
+upstream	libwrap0	amd64	7.6.q-36	cde12afa15d6b1556c5e0564d22edf3b99e6b8fa94c59ccd8b8eebbb62dc19ec	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/t/tcp-wrappers/libwrap0_7.6.q-36_amd64.deb	libwrap0,socat
+upstream	libwrap0	arm64	7.6.q-36	fd2e54582a07fba9c8a6f78c68dcc6d3c8cf1c70632a68124394bde4dccf52ea	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/t/tcp-wrappers/libwrap0_7.6.q-36_arm64.deb	libwrap0,socat
+upstream	libwrap0	armhf	7.6.q-36	c2cff944202551096ebdc23c3b28f594b966502c0eced5fdc8db7ef9f1712bc0	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/t/tcp-wrappers/libwrap0_7.6.q-36_armhf.deb	libwrap0,socat
+upstream	libwtmpdb0	amd64	0.73.0-3+deb13u1	8d6bc1c961d734da58b2d4c35b0a3cd6ad2fe81655bd982c655a97c2255b1c9b	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/w/wtmpdb/libwtmpdb0_0.73.0-3+deb13u1_amd64.deb	libwtmpdb0
+upstream	libwtmpdb0	arm64	0.73.0-3+deb13u1	6c1e8bcf1192048b0c4d4fcff83debda41b609a0917017aa3faeb47401b1a62e	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/w/wtmpdb/libwtmpdb0_0.73.0-3+deb13u1_arm64.deb	libwtmpdb0
+upstream	libwtmpdb0	armhf	0.73.0-3+deb13u1	f4ea38cd1e13e82707d0d71212b5442b4b590d1a816e3aaf24bbc069905a9564	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/w/wtmpdb/libwtmpdb0_0.73.0-3+deb13u1_armhf.deb	libwtmpdb0
 upstream	libxml2	amd64	2.12.7+dfsg+really2.9.14-2.1+deb13u3	e0c6b63ce4602a036a526f60fe5e6c1586710688058d98fc1001b9b3147b7efd	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libx/libxml2/libxml2_2.12.7+dfsg+really2.9.14-2.1+deb13u3_amd64.deb	bind9-dnsutils
 upstream	libxml2	arm64	2.12.7+dfsg+really2.9.14-2.1+deb13u3	a66b9c960acef8ed9653223cbd00b155a92ebb758ea13a788c41609246c23bc7	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libx/libxml2/libxml2_2.12.7+dfsg+really2.9.14-2.1+deb13u3_arm64.deb	bind9-dnsutils
 upstream	libxml2	armhf	2.12.7+dfsg+really2.9.14-2.1+deb13u3	8da45a233e98f3b2332b04c85d89fe8ad0538d597b5bc66845666fc2727876b4	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libx/libxml2/libxml2_2.12.7+dfsg+really2.9.14-2.1+deb13u3_armhf.deb	bind9-dnsutils
@@ -446,9 +452,9 @@ upstream	openrc	armhf	0.56-1	7557a862d59d50812ed0a880cd11bc01a64561f921916a9c503
 upstream	openssl	amd64	3.5.7-1~deb13u2	4ff006f431d8c2e69fa736885a3b6e779f2448535f69dbde821d9f0ff87ad8ea	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/openssl_3.5.7-1~deb13u2_amd64.deb	openssl
 upstream	openssl	arm64	3.5.7-1~deb13u2	ff38f9e4fdbfef72d9cb31088e5e42f58c83c2fb1d1bbb4e4b4c9adc53c17100	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/openssl_3.5.7-1~deb13u2_arm64.deb	openssl
 upstream	openssl	armhf	3.5.7-1~deb13u2	94afc1c0bf72552b729dfe73eba3439e914ab8ec0c36b5564247dc286ed46bb1	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/openssl_3.5.7-1~deb13u2_armhf.deb	openssl
-upstream	openssl-provider-legacy	amd64	3.5.7-1~deb13u2	f155c8191ae6d41da73d792f4182680aeafeb85c3dd223934ee9fdd115c4f1fa	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/openssl-provider-legacy_3.5.7-1~deb13u2_amd64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
-upstream	openssl-provider-legacy	arm64	3.5.7-1~deb13u2	7628954796eb651fc499ad98d4e51435691c2ccce0b5fbae6b198cbece742db4	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/openssl-provider-legacy_3.5.7-1~deb13u2_arm64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
-upstream	openssl-provider-legacy	armhf	3.5.7-1~deb13u2	eefa69b451e991b52daeef669114dd23956c2d14d3bd4e5a1b4cc0c5ca62111d	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/openssl-provider-legacy_3.5.7-1~deb13u2_armhf.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
+upstream	openssl-provider-legacy	amd64	3.5.7-1~deb13u2	f155c8191ae6d41da73d792f4182680aeafeb85c3dd223934ee9fdd115c4f1fa	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/openssl-provider-legacy_3.5.7-1~deb13u2_amd64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
+upstream	openssl-provider-legacy	arm64	3.5.7-1~deb13u2	7628954796eb651fc499ad98d4e51435691c2ccce0b5fbae6b198cbece742db4	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/openssl-provider-legacy_3.5.7-1~deb13u2_arm64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
+upstream	openssl-provider-legacy	armhf	3.5.7-1~deb13u2	eefa69b451e991b52daeef669114dd23956c2d14d3bd4e5a1b4cc0c5ca62111d	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/o/openssl/openssl-provider-legacy_3.5.7-1~deb13u2_armhf.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
 upstream	parted	amd64	3.6-5	fbb8429783a8dd065bf9c37e249acaa56cb7bb8a3ff5bb531ef0aac3e8945f2d	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/p/parted/parted_3.6-5_amd64.deb	parted
 upstream	parted	arm64	3.6-5	62006921ec2a8b10ad3e52d0bbaf41b31f6806ea5d3ee15c8544b379c6e712ab	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/p/parted/parted_3.6-5_arm64.deb	parted
 upstream	parted	armhf	3.6-5	dcf7f676a289acc4f5f9413a9aae75f3527666aa03ea0842c3f8ee42dea6c1de	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/p/parted/parted_3.6-5_armhf.deb	parted
@@ -534,6 +540,6 @@ upstream	zstd	amd64	1.5.7+dfsg-1	6da09b6aad171ef9b50d6a2bb4c62f756b3561aac5e05b4
 upstream	zstd	arm64	1.5.7+dfsg-1	715696637b45bf1c30230f1c97f9ffdc9af18ead053564d9349f92accccbe988	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libz/libzstd/zstd_1.5.7+dfsg-1_arm64.deb	zstd
 upstream	zstd	armhf	1.5.7+dfsg-1	9e235e6a0d1b356bd3e0b5cb554ee4d21f5aebf11c14c6020bc91a049eee1b77	https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libz/libzstd/zstd_1.5.7+dfsg-1_armhf.deb	zstd
 apt	https://snapshot.debian.org/archive/debian/20261001T000000Z	trixie	main	/usr/share/keyrings/debian-archive-keyring.gpg
-data	unowned.amd64	mica-system-base-unowned.amd64.tsv	50469a01df4024c7785a6b93eda823758212457b04dff5db830ecff976cebb70
-data	unowned.arm64	mica-system-base-unowned.arm64.tsv	82e9665b90088260054a6325211532925283e4fcad62b4db4c8e58a04a4a9c9d
-data	unowned.armhf	mica-system-base-unowned.armhf.tsv	27e6232b7fbba657a11a4fdfa63cfcc1fbc3fa8da456a2d4d6e2eb8d2edf6d48
+data	unowned.amd64	mica-system-base-unowned.amd64.tsv	a5ba626d970d186226415fbae52dacc24db20c2fc0850e7a72b1b84b7d7eac20
+data	unowned.arm64	mica-system-base-unowned.arm64.tsv	49160bdc0b955588b57f856efe2e0081a68c77b53a2915636c7b9300e4c4c869
+data	unowned.armhf	mica-system-base-unowned.armhf.tsv	513450d3cbc7302a94e7b0fa4e5a74f78cb87f444ee7aa93075a566644cb0f1c

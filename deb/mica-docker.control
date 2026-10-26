@@ -1,6 +1,6 @@
 Package: mica-docker
-Version: 29.9.1-2
-Source-Date-Epoch: 1792449180
+Version: 29.9.2-1
+Source-Date-Epoch: 1793019780
 Architecture: @ARCH@
 Maintainer: Mica OS <hi@micaos.dev>
 Section: admin
@@ -9,11 +9,11 @@ Provides: mica-container-engine
 Conflicts: mica-podman
 Depends: mica-system, nftables, libc6 (>= 2.38), libseccomp2 (>= 2.6.0)
 Description: Mica OS Docker engine
- Docker 29.9.1 (dockerd and the docker CLI), docker compose 5.6.0, containerd
- 2.4.2, runc 1.5.2 and tini 0.19.0 as docker-init, built from pinned upstream
- source, with /etc/docker/daemon.json: data under /mica/containers/docker,
- the local log driver and the nftables firewall backend. The podman engine of
- mica-podman conflicts.
+ Docker 29.9.2 (dockerd), the docker CLI 29.9.1, docker compose 5.6.0,
+ containerd 2.4.2, runc 1.5.2 and tini 0.19.0 as docker-init, built from
+ pinned upstream source, with /etc/docker/daemon.json: data under
+ /mica/containers/docker, the local log driver and the nftables firewall
+ backend. The podman engine of mica-podman conflicts.
  .
  Nothing is enabled: micad enables docker.service from the container.enabled
  setting. /usr/lib/sysctl.d/50-mica-docker.conf turns on the IP forwarding
