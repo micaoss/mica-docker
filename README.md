@@ -11,9 +11,9 @@ chosen when the product is built. The release-lock and build rules run in
 
 | Binary | From | Installed as |
 | --- | --- | --- |
-| `dockerd`, `docker-proxy` | moby `docker-v29.9.1` | `/usr/bin/` |
-| `docker` | docker/cli `v29.9.1` | `/usr/bin/docker` |
-| `docker-compose` | docker/compose `v5.6.0` | `/usr/libexec/docker/cli-plugins/docker-compose` (`docker compose`) |
+| `dockerd`, `docker-proxy` | moby `docker-v29.9.3` | `/usr/bin/` |
+| `docker` | docker/cli `v29.9.3` | `/usr/bin/docker` |
+| `docker-compose` | docker/compose `v5.7.0` | `/usr/libexec/docker/cli-plugins/docker-compose` (`docker compose`) |
 | `containerd`, `containerd-shim-runc-v2` | containerd `v2.4.2` | `/usr/bin/` |
 | `runc` | opencontainers/runc `v1.5.2`, with seccomp | `/usr/bin/runc` |
 | `docker-init` | krallin/tini `v0.19.0`, static | `/usr/bin/docker-init` |

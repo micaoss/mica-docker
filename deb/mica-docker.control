@@ -1,6 +1,6 @@
 Package: mica-docker
-Version: 29.9.1-2
-Source-Date-Epoch: 1792449180
+Version: 29.9.3-1
+Source-Date-Epoch: 1794030840
 Architecture: @ARCH@
 Maintainer: Mica OS <hi@micaos.dev>
 Section: admin
@@ -9,7 +9,7 @@ Provides: mica-container-engine
 Conflicts: mica-podman
 Depends: mica-system, nftables, libc6 (>= 2.38), libseccomp2 (>= 2.6.0)
 Description: Mica OS Docker engine
- Docker 29.9.1 (dockerd and the docker CLI), docker compose 5.6.0, containerd
+ Docker 29.9.3 (dockerd and the docker CLI), docker compose 5.7.0, containerd
  2.4.2, runc 1.5.2 and tini 0.19.0 as docker-init, built from pinned upstream
  source, with /etc/docker/daemon.json: data under /mica/containers/docker,
  the local log driver and the nftables firewall backend. The podman engine of
