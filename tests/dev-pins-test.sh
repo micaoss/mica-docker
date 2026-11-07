@@ -87,5 +87,16 @@ if [ "$RC" -ne 0 ] && says "$OUT" "downloads with sha256" && [ ! -f "$TMP/out/$S
     pass "P8 an archive that downloads with other bytes is refused and not kept"
 else fail "P8 rc=$RC: $OUT"; fi
 
+# resolve in a checkout with no _out (the upgrade workflow's): it gets past its work
+# directory to docker, here a stub that stops it.
+mkdir -p "$TMP/stub"
+printf '#!/bin/sh\necho "docker-stub: $1" >&2\nexit 1\n' >"$TMP/stub/docker"
+chmod +x "$TMP/stub/docker"
+rm -rf "$FIX/_out"
+RC=0; OUT=$(PATH="$TMP/stub:$PATH" bash "$FIX/tools/dev-pins.sh" resolve 2>&1) || RC=$?
+if [ "$RC" -ne 0 ] && says "$OUT" "docker-stub: create" && ! says "$OUT" "mktemp"; then
+    pass "P9 resolve in a fresh checkout creates _out for its work directory"
+else fail "P9 rc=$RC: $OUT"; fi
+
 echo "RESULT: $FAIL_N failed, $PASS_N passed"
 [ "$FAIL_N" -eq 0 ]

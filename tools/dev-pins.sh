@@ -69,6 +69,7 @@ resolve)
     command -v docker >/dev/null 2>&1 || die "docker is required"
     source_line="$(apt_source)"
     [ -n "${source_line}" ] || die "pins/snapshot names no Debian archive"
+    mkdir -p "${REPO_ROOT}/_out"
     WORK="$(mktemp -d "${REPO_ROOT}/_out/dev-pins.XXXXXX")"
     trap 'rm -rf "${WORK}"' EXIT
     : >"${WORK}/rows"
