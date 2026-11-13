@@ -59,6 +59,8 @@ for arch in "${ARCHES[@]}"; do
         [ "$(field Provides)/$(field Conflicts)" = "mica-container-engine/mica-podman" ]
     check "${arch}: Depends is expanded" bash -c '[ -n "$1" ] && case "$1" in *"\${"*) exit 1 ;; esac' _ "$(field Depends)"
     depends="$(field Depends | tr ',' '\n' | sed 's/|.*//; s/(.*//; s/:any//; s/[[:space:]]//g' | grep -v '^mica-' | LC_ALL=C sort -u | tr '\n' ' ')"
+    check "${arch}: the Mica Depends are mica-system and the init's, mica-openrc with mica-require-mount" \
+        [ "$(field Depends | tr ',' '\n' | sed 's/^ *//; s/ *$//' | grep '^mica-' | tr '\n' '/')" = "mica-system/mica-systemd | mica-openrc (>= 0.56-mica19)/" ]
     check "${arch}: Debian Depends are exactly deb/debian-depends (${depends% })" \
         [ "${depends}" = "$(sed 's/#.*//; /^[[:space:]]*$/d' deb/debian-depends | LC_ALL=C sort -u | tr '\n' ' ')" ]
     check "${arch}: control archive holds only control and md5sums (no conffiles, no maintainer scripts)" \

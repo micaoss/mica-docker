@@ -28,6 +28,8 @@ check "U3 dockerd listens on its own socket, not a socket-activated fd" \
     bash -c '[ "$1" = /usr/bin/dockerd ]' _ "$(keys ExecStart)"
 check "U4 Type=notify, Delegate=yes, KillMode=process" \
     [ "$(keys Type)/$(keys Delegate)/$(keys KillMode)" = notify/yes/process ]
+check "U5 docker.service requires the mounts of its engine root (the user's disk there too)" \
+    [ "$(keys RequiresMountsFor)" = /mica/containers/docker ]
 
 # depend() as openrc-run calls it, with need/after/use recording their arguments.
 depend_calls="$(sh -c '
@@ -37,8 +39,8 @@ depend_calls="$(sh -c '
     . "$0"
     depend' "$OPENRC")"
 check "O1 the OpenRC script starts after micad" grep -x "after micad" <<<"${depend_calls}"
-check "O2 the OpenRC script needs nothing but mica-mounts (no containerd, no net)" \
-    [ "$(grep '^need ' <<<"${depend_calls}")" = "need mica-mounts" ]
+check "O2 the OpenRC script needs nothing but mica-mounts and mica-fstab (no containerd, no net)" \
+    [ "$(grep '^need ' <<<"${depend_calls}")" = "need mica-mounts mica-fstab" ]
 command_args="$(sh -c '. "$0"; echo "${command}|${command_args}"' "$OPENRC")"
 check "O3 the OpenRC script runs dockerd with -p /run/docker.pid" [ "${command_args}" = "/usr/bin/dockerd|-p /run/docker.pid" ]
 
@@ -50,11 +52,20 @@ check "J2 nothing sets a minimum API version, a pid file or live-restore" \
 SYSCTL=overlay/usr/lib/sysctl.d/50-mica-docker.conf
 check "F1 the sysctl.d file turns on IPv4 and (when present) IPv6 forwarding" \
     [ "$(sed 's/#.*//; /^[[:space:]]*$/d' "$SYSCTL")" = "$(printf 'net.ipv4.ip_forward = 1\n-net.ipv6.conf.all.forwarding = 1')" ]
-# start_pre against a fixture /proc/sys: the script's path prefix is rewritten.
+# start_pre against a fixture /proc/sys and a stand-in for mica-openrc's
+# mica-require-mount, which records its arguments and exits $REQUIRE_RC: the
+# script's paths are rewritten.
 mkdir -p "$TMP/proc/sys/net/ipv4"
 echo 0 >"$TMP/proc/sys/net/ipv4/ip_forward"
-sed -e "s|/proc/sys/|$TMP/proc/sys/|; s|/usr/lib/sysctl.d/50-mica-docker.conf|$REPO_ROOT/$SYSCTL|" "$OPENRC" >"$TMP/docker.openrc"
+printf '#!/bin/sh\necho "$*" >"%s/require.args"\n[ "${REQUIRE_RC:-0}" = 0 ] || echo "mica-require-mount: $1 is not mounted; fstab line 1" >&2\nexit "${REQUIRE_RC:-0}"\n' "$TMP" >"$TMP/require-mount"
+chmod +x "$TMP/require-mount"
+sed -e "s|/proc/sys/|$TMP/proc/sys/|; s|/usr/lib/sysctl.d/50-mica-docker.conf|$REPO_ROOT/$SYSCTL|; s|/usr/lib/mica/mica-require-mount|$TMP/require-mount|" "$OPENRC" >"$TMP/docker.openrc"
 pre() { sh -c 'eerror() { echo "$*" >&2; }; . "$0"; start_pre' "$TMP/docker.openrc"; }
+required() { pre && [ "$(cat "$TMP/require.args")" = /mica/containers/docker ]; }
+check "M1 start_pre requires the mount of the engine root" required
+echo 0 >"$TMP/proc/sys/net/ipv4/ip_forward"
+refused_mount() { ! REQUIRE_RC=1 pre 2>"$TMP/require.err" && grep -q "^mica-require-mount: /mica/containers/docker is not mounted" "$TMP/require.err" && [ "$(cat "$TMP/proc/sys/net/ipv4/ip_forward")" = 0 ]; }
+check "M2 ... and refuses the start, its stderr through, before anything else, when the user's disk is not mounted" refused_mount
 forwards() { pre && [ "$(cat "$TMP/proc/sys/$1")" = 1 ]; }
 check "F2 the OpenRC start_pre writes the forwarding, skipping IPv6 the kernel lacks" forwards net/ipv4/ip_forward
 mkdir -p "$TMP/proc/sys/net/ipv6/conf/all"

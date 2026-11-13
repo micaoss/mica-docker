@@ -31,8 +31,9 @@ runc links the system libseccomp, and docker-init is static because it runs
 inside containers. Installed-Size is about 209 MB on amd64.
 
 `Depends` are declared in `deb/mica-docker.control` with their floors and are
-exactly `deb/debian-depends` plus `mica-system`; it installs on either of
-mica-system-base's inits. `Provides: mica-container-engine`, `Conflicts:
+exactly `deb/debian-depends` plus `mica-system` and `mica-systemd | mica-openrc
+(>= 0.56-mica19)`; it installs on either of mica-system-base's inits, and on
+OpenRC needs the mica-openrc that ships `mica-fstab` and `mica-require-mount`. `Provides: mica-container-engine`, `Conflicts:
 mica-podman` (both ship `/usr/bin/docker`). `nftables` names the `nft` binary
 dockerd runs for its firewall rules.
 
@@ -65,6 +66,14 @@ API on `/run/docker.sock`, and it switches the engine on and off.
   the kernel has IPv6, `net.ipv6.conf.all.forwarding` to 1. systemd-sysctl
   applies it at boot; on OpenRC, where no sysctl service runs, the `docker`
   script's `start_pre` writes the same keys before dockerd starts.
+- **The engine root may be the user's own disk**: a user may mount one at
+  `/mica/containers/docker`, and the engine then does not start on the empty
+  directory beneath it while that disk is missing. `docker.service` is
+  `RequiresMountsFor=/mica/containers/docker`, so the user's mount unit for it
+  is required. On OpenRC the script needs `mica-fstab`, and its `start_pre`
+  runs `/usr/lib/mica/mica-require-mount /mica/containers/docker` (mica-openrc)
+  first: when `/usr/local/etc/fstab` names that path and it is not mounted,
+  the start is refused with the fstab line on stderr.
 - **live-restore is off**, Docker's default, so it is not written: stopping
   dockerd stops its containers, and turning containers off in micad turns them
   really off. A container's `restart:` policy starts it again with dockerd.
@@ -203,8 +212,8 @@ builds each architecture on a native runner.
 | `tools/stamp.sh` | records which pins a build used; packing refuses a stale one |
 | `tools/package.sh`, `deb/`, `overlay/` | stages and packs the archive with `mica-tools deb pack`, and indexes the pool |
 | `tests/package-gate.sh` | identity, payload, Depends, Provides and Conflicts, copyright, no conffiles or enablement, `mica-tools pool gate`, byte-identical rebuilds |
-| `tests/units-test.sh` | the start-up files and `daemon.json` against the runtime contract |
-| `tests/docker-smoke.sh` | the archive installed in a privileged container and run: forwarding off then applied, offline start, pid file, API 1.44, containers, networks and DNS, nftables, ports, logs, compose, capabilities, devices, stop |
+| `tests/units-test.sh` | the start-up files, the sysctl file and `daemon.json` against the runtime contract |
+| `tests/docker-smoke.sh` | the archive installed in a privileged container and run: forwarding off then applied, offline start, the engine root on a mount of its own, pid file, API 1.44, containers, networks and DNS, nftables, ports, logs, compose, capabilities, devices, stop |
 | `tools/release.sh` | publishes a release through `mica-tools` |
 | `tools/base-check.sh` | the Debian dependencies against the pinned Base release |
 | `tools/dev-pins.sh`, `pins/` | resolves, checks and fetches the build closure |

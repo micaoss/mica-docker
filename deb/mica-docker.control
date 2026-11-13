@@ -1,13 +1,13 @@
 Package: mica-docker
-Version: 29.9.3-1
-Source-Date-Epoch: 1794030840
+Version: 29.9.3-2
+Source-Date-Epoch: 1794590580
 Architecture: @ARCH@
 Maintainer: Mica OS <hi@micaos.dev>
 Section: admin
 Priority: optional
 Provides: mica-container-engine
 Conflicts: mica-podman
-Depends: mica-system, nftables, libc6 (>= 2.38), libseccomp2 (>= 2.6.0)
+Depends: mica-system, mica-systemd | mica-openrc (>= 0.56-mica19), nftables, libc6 (>= 2.38), libseccomp2 (>= 2.6.0)
 Description: Mica OS Docker engine
  Docker 29.9.3 (dockerd and the docker CLI), docker compose 5.7.0, containerd
  2.4.2, runc 1.5.2 and tini 0.19.0 as docker-init, built from pinned upstream
@@ -17,7 +17,11 @@ Description: Mica OS Docker engine
  .
  Nothing is enabled: micad enables docker.service from the container.enabled
  setting. /usr/lib/sysctl.d/50-mica-docker.conf turns on the IP forwarding
- dockerd needs (systemd-sysctl applies it; the OpenRC script applies it before
- dockerd starts). dockerd execs nft for its firewall rules, so nftables is
- declared. mica-system provides the /mica/containers mount the configuration
- uses.
+ dockerd needs (systemd-sysctl applies it; the OpenRC script applies it
+ before dockerd starts). dockerd execs nft for its firewall rules, so
+ nftables is declared. mica-system provides the /mica/containers mount the
+ configuration uses. The engine root /mica/containers/docker may be the
+ user's own disk: docker.service requires its mount, and the OpenRC script
+ refuses to start while the disk the user's fstab names there is not
+ mounted, through mica-openrc's mica-fstab and mica-require-mount
+ (0.56-mica19 or later).

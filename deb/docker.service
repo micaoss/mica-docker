@@ -6,9 +6,11 @@ Description=Docker engine
 Documentation=https://github.com/micaoss/mica-docker
 # After micad, so micad's application reset runs before the engine holds
 # /mica/containers. No network ordering and no socket activation: a device may run
-# offline, and its containers start without the network.
+# offline, and its containers start without the network. The engine root may be
+# the user's own disk: its mount unit is required, so an absent disk fails the
+# engine instead of filling DATA (the mounts of /mica and /mica/containers too).
 After=micad.service
-RequiresMountsFor=/mica/containers
+RequiresMountsFor=/mica/containers/docker
 StartLimitBurst=3
 StartLimitIntervalSec=60
 

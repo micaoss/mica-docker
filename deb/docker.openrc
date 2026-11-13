@@ -16,17 +16,22 @@ error_logger="logger -t dockerd -p daemon.err"
 
 # After micad, so micad's application reset runs before the engine holds
 # /mica/containers. No network ordering: a device may run offline, and its
-# containers start without the network.
+# containers start without the network. mica-fstab mounts the user's own disk at
+# the engine root, when /usr/local/etc/fstab names one.
 depend() {
-    need mica-mounts
+    need mica-mounts mica-fstab
     after micad
     use logger
 }
 
-# The forwarding of /usr/lib/sysctl.d/50-mica-docker.conf, which no sysctl service
-# applies on this init: each key written to /proc/sys; a key with a leading '-' is
-# skipped when the kernel lacks it.
+# The engine root first: when the user's fstab names a disk for it, that disk must
+# be mounted, or dockerd would fill DATA instead (mica-openrc's helper; its stderr
+# names the fstab line). Then the forwarding of
+# /usr/lib/sysctl.d/50-mica-docker.conf, which no sysctl service applies on this
+# init: each key written to /proc/sys; a key with a leading '-' is skipped when the
+# kernel lacks it.
 start_pre() {
+    /usr/lib/mica/mica-require-mount /mica/containers/docker || return 1
     while read -r line; do
         case "${line}" in "" | "#"*) continue ;; esac
         key="$(echo ${line%%=*})"

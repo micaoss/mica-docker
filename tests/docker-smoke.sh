@@ -3,7 +3,7 @@
 # the mica-build-env base image, the archive's Debian Depends from the apt row of
 # locks/mica-system-base.lock (the snapshot the device roots install from), the
 # archive with dpkg (mica-system is not installed, so /mica/containers is made, on a
-# volume of its own). With IP forwarding off, dockerd refuses to start until the
+# volume of its own, and the engine root is a mount of its own, as a user's disk). With IP forwarding off, dockerd refuses to start until the
 # package's sysctl.d file is applied; then it starts as docker.service starts it,
 # with no default route; then the contract micad relies on (API 1.44, /run/docker.pid,
 # daemon.json) and containers as users run them: exit codes, a network with name
@@ -52,7 +52,14 @@ docker run --rm --label ai-agent=true --privileged --platform "linux/${ARCH}" \
     depends="$(dpkg-deb --field "${DEB}" Depends | tr "," "\n" | sed "s/(.*//; s/[[:space:]]//g" | grep -v "^mica-" | tr "\n" " ")"
     DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends ca-certificates curl iproute2 procps ${depends} >/dev/null
     dpkg --force-depends --install "${DEB}" >/dev/null 2>&1
-    install -d /mica/containers
+    install -d /mica/containers /mica/containers/docker
+    # The engine root on a disk of its own, as a user mounts one there.
+    mount -t tmpfs -o size=2g user-disk /mica/containers/docker
+    # mica-openrc ships mica-require-mount; this root has no user fstab, so it lets
+    # the start through.
+    install -d /usr/lib/mica
+    printf "#!/bin/sh\nexit 0\n" >/usr/lib/mica/mica-require-mount
+    chmod 0755 /usr/lib/mica/mica-require-mount
     # Nested in docker, this container is the root of its cgroup namespace and holds
     # processes, so no controller can be delegated below it: move them to a leaf
     # first, as docker:dind does. A device root has its own cgroup tree.
@@ -92,6 +99,7 @@ docker run --rm --label ai-agent=true --privileged --platform "linux/${ARCH}" \
     ip route flush default
     check "S1 dockerd starts with no default route" start
     ip route restore </tmp/routes 2>/dev/null || true
+    check "S1a dockerd keeps its data on the disk mounted at the engine root" sh -c "findmnt -n -o SOURCE --mountpoint /mica/containers/docker | grep -x user-disk && [ -d /mica/containers/docker/containerd ]"
     check "S2 dockerd wrote its pid to /run/docker.pid" sh -c "[ \"\$(cat /run/docker.pid)\" = \"\$(pgrep -x dockerd)\" ]"
     check "S3 data-root, log driver, firewall and storage are the shipped daemon.json" sh -c "docker info --format \"{{.DockerRootDir}} {{.LoggingDriver}} {{.FirewallBackend.Driver}} {{.Driver}}\" | grep -x \"/mica/containers/docker local nftables overlayfs\""
     check "S4 API 1.44 is served on /run/docker.sock" sh -c "curl -fsS --unix-socket /run/docker.sock http://d/v1.44/version && dpkg --compare-versions \"\$(docker version --format {{.Server.MinAPIVersion}})\" le 1.44"
