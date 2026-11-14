@@ -1,13 +1,13 @@
 # mica-lock v1
-# mica-system-base.lock: mica-system-base 20261107-0646, written when the release was published.
-release	mica-system-base	20261107-0646	957eecc25380807cb9585ff197dcafb35835aaca
-image	mica-system-base	rootfs	amd64	ghcr.io/micaoss/mica-system-base@sha256:176b69eaf217fb84dbe4201e3e56d399388baedd13e567fb29ce76db5f2d1728
-image	mica-system-base	rootfs	arm64	ghcr.io/micaoss/mica-system-base@sha256:e83cef0cc5857742342be450144af5e522dfafc84a3150fda4b5182a6f324c89
-image	mica-system-base	rootfs	armhf	ghcr.io/micaoss/mica-system-base@sha256:60e46f425de7421d6cff675a9abda78390dcac5f3cdef6b331cf60cb4c2758c5
-image	mica-system-base	rootfs	index	ghcr.io/micaoss/mica-system-base:rootfs.20261107-0646@sha256:0aba2b5319df1259e5fc26dca4281930e41225b124ea2457480ca6ee0a7154ca
-pool	amd64	ghcr.io/micaoss/mica-system-base:pool.amd64.20261107-0646@sha256:9cb41a5bc5fb40210bcd569bc529131282ab9a1e81a6dfe1cf1efdd66faefe61
-pool	arm64	ghcr.io/micaoss/mica-system-base:pool.arm64.20261107-0646@sha256:38341a13a13641e621d990b7f339ea63dd54fb667454d0ebe8a17af532ce0821
-pool	armhf	ghcr.io/micaoss/mica-system-base:pool.armhf.20261107-0646@sha256:5a9b9fc4beb17c2e111e8c17b7c744f61258f0b3dd2821afa6838605a65302ab
+# mica-system-base.lock: mica-system-base 20261114-0206, written when the release was published.
+release	mica-system-base	20261114-0206	3664e0990c4cdfb3782e6b607c326d0019d3dea8
+image	mica-system-base	rootfs	amd64	ghcr.io/micaoss/mica-system-base@sha256:22d467bd110a38f39d9fe9bbebdac176464ab03c171961d2924b6753f3754bb8
+image	mica-system-base	rootfs	arm64	ghcr.io/micaoss/mica-system-base@sha256:16099ca5daf433f2bcd4ea1ce26507285925ffcfa34ebee06c5a3f7e32b3590b
+image	mica-system-base	rootfs	armhf	ghcr.io/micaoss/mica-system-base@sha256:0248ca79cc50984a6b1ee126ed934e1b9ce50cb4ec641db793a5ef4026279cd6
+image	mica-system-base	rootfs	index	ghcr.io/micaoss/mica-system-base:rootfs.20261114-0206@sha256:e239fe144c04e04a064ab99e1add2107e3934979c70b15da4fcf202fc0daec88
+pool	amd64	ghcr.io/micaoss/mica-system-base:pool.amd64.20261114-0206@sha256:e15467f371d062eb3da9d9cfe5c68e786fae733e4adba6f2a11e81ede8edab9a
+pool	arm64	ghcr.io/micaoss/mica-system-base:pool.arm64.20261114-0206@sha256:4a3dc6318aacc9b9027ec0e36055db74441ed09f51b8be9f45013534431bcd44
+pool	armhf	ghcr.io/micaoss/mica-system-base:pool.armhf.20261114-0206@sha256:e3e106b0b44b0bbd8397a120cd80c1a7111885a9b8b91edf39f58ef3e621a5f1
 package	mica-bluetooth	amd64	5.82-mica5	4f87201aca2dddd1a8f41a7a6e79fe32ae2328bb1ecdd436d6381659330ae448
 package	mica-bluetooth	arm64	5.82-mica5	4f87201aca2dddd1a8f41a7a6e79fe32ae2328bb1ecdd436d6381659330ae448
 package	mica-bluetooth	armhf	5.82-mica5	4f87201aca2dddd1a8f41a7a6e79fe32ae2328bb1ecdd436d6381659330ae448
@@ -17,32 +17,35 @@ package	mica-busybox	armhf	1.38.0-mica3	0dfca6f17b39bab4ba34d8fc72f9ba8922e67cf1
 package	mica-ca-trust	amd64	20250419-mica3	5967ab4126c50496bc57202d65261ac318bc7c44a85793123424945fb1fa7334
 package	mica-ca-trust	arm64	20250419-mica3	5967ab4126c50496bc57202d65261ac318bc7c44a85793123424945fb1fa7334
 package	mica-ca-trust	armhf	20250419-mica3	5967ab4126c50496bc57202d65261ac318bc7c44a85793123424945fb1fa7334
-package	mica-mdev	amd64	1.38.0-mica4	ef8f265c8af8c5da2dd7c0133ef7c4d209a50e98a18afbd6af78765a479c0b94
-package	mica-mdev	arm64	1.38.0-mica4	ef8f265c8af8c5da2dd7c0133ef7c4d209a50e98a18afbd6af78765a479c0b94
-package	mica-mdev	armhf	1.38.0-mica4	ef8f265c8af8c5da2dd7c0133ef7c4d209a50e98a18afbd6af78765a479c0b94
-package	mica-openrc	amd64	0.56-mica15	5a018c29784aa28183e549c108c9c9608cf30f1f85fd9e4f77ebc8da1ab9f683
-package	mica-openrc	arm64	0.56-mica15	5a018c29784aa28183e549c108c9c9608cf30f1f85fd9e4f77ebc8da1ab9f683
-package	mica-openrc	armhf	0.56-mica15	5a018c29784aa28183e549c108c9c9608cf30f1f85fd9e4f77ebc8da1ab9f683
-package	mica-openssh	amd64	10.0p1-mica5	fc0bf3cb22e616a98cfc9a71a8adf08c147d53aeecd276bc10e21cb8697e9b7a
-package	mica-openssh	arm64	10.0p1-mica5	1dde38891195b18cce4c2289de915d86d99bf8c2ec6e42733ca5526f20a807d7
-package	mica-openssh	armhf	10.0p1-mica5	7f22a25c40f5b0c1296985f9882d9b2c28a1291f2e08c562a9676f5aefd4c554
+package	mica-mdev	amd64	1.38.0-mica6	b25e5199bdc3bf7c6bb24e3df4107a276d997d0fc815cf44771ba1783b38f3d6
+package	mica-mdev	arm64	1.38.0-mica6	b25e5199bdc3bf7c6bb24e3df4107a276d997d0fc815cf44771ba1783b38f3d6
+package	mica-mdev	armhf	1.38.0-mica6	b25e5199bdc3bf7c6bb24e3df4107a276d997d0fc815cf44771ba1783b38f3d6
+package	mica-openrc	amd64	0.56-mica19	e6d62dab5db5d05e219e5ae0f9b8bb6c1299783d2b6dc07ecc1c375ff2ac02fb
+package	mica-openrc	arm64	0.56-mica19	e6d62dab5db5d05e219e5ae0f9b8bb6c1299783d2b6dc07ecc1c375ff2ac02fb
+package	mica-openrc	armhf	0.56-mica19	e6d62dab5db5d05e219e5ae0f9b8bb6c1299783d2b6dc07ecc1c375ff2ac02fb
+package	mica-openssh	amd64	10.0p1-mica6	bcb53c8064abdad7570ae7245a541e378330b7105685b7eb517118cd1201cc74
+package	mica-openssh	arm64	10.0p1-mica6	59e3da370f81fcee47e6b1ef9bafd8cb9c16af88995c2b786e258f3cf93935d2
+package	mica-openssh	armhf	10.0p1-mica6	1ea99040ace5ab7074605a1b3e30dc28e773504fe2cd150fdaae43f6dda25f6a
 package	mica-ssh	amd64	2025.89-mica6	9373911d1003f314f31c87557937dbef2e96122b57a0b89f7272576126cf16d3
 package	mica-ssh	arm64	2025.89-mica6	9373911d1003f314f31c87557937dbef2e96122b57a0b89f7272576126cf16d3
 package	mica-ssh	armhf	2025.89-mica6	9373911d1003f314f31c87557937dbef2e96122b57a0b89f7272576126cf16d3
-package	mica-storage-ubi	armhf	13.8+deb13u7-mica3	fe2986199b2e7e98d31381fd844312e86ae9a1bb8ee114f1112c5f3767b94dff
-package	mica-system	amd64	13.8+deb13u7-mica11	00472319bec6eaadfb92c8793d5ddd9c7748823f70c23236af870dbb0e77ec67
-package	mica-system	arm64	13.8+deb13u7-mica11	00472319bec6eaadfb92c8793d5ddd9c7748823f70c23236af870dbb0e77ec67
-package	mica-system	armhf	13.8+deb13u7-mica11	00472319bec6eaadfb92c8793d5ddd9c7748823f70c23236af870dbb0e77ec67
-package	mica-systemd	amd64	257.13-mica13	0c479a649417eb94ceb05b6869b6ed9df6c7260ed8f1cbda7702a2a7e9305803
-package	mica-systemd	arm64	257.13-mica13	0c479a649417eb94ceb05b6869b6ed9df6c7260ed8f1cbda7702a2a7e9305803
-package	mica-systemd	armhf	257.13-mica13	0c479a649417eb94ceb05b6869b6ed9df6c7260ed8f1cbda7702a2a7e9305803
+package	mica-storage-ubi	armhf	13.8+deb13u7-mica4	4e96317864dde716713ec9fb1aac91e8bac001c279e3df23ebd808cd8dac4f23
+package	mica-sudo	amd64	1.9.16p2-mica1	6c834b78ca726a8a903308ade078351a33a646f67daf10b9515a03a1d49bcfa4
+package	mica-sudo	arm64	1.9.16p2-mica1	6c834b78ca726a8a903308ade078351a33a646f67daf10b9515a03a1d49bcfa4
+package	mica-sudo	armhf	1.9.16p2-mica1	6c834b78ca726a8a903308ade078351a33a646f67daf10b9515a03a1d49bcfa4
+package	mica-system	amd64	13.8+deb13u7-mica16	49fd0b25d965971ccede6e61a72507be62d4c63bc810f9c7e92636f28b52f71e
+package	mica-system	arm64	13.8+deb13u7-mica16	49fd0b25d965971ccede6e61a72507be62d4c63bc810f9c7e92636f28b52f71e
+package	mica-system	armhf	13.8+deb13u7-mica16	49fd0b25d965971ccede6e61a72507be62d4c63bc810f9c7e92636f28b52f71e
+package	mica-systemd	amd64	257.13-mica17	6087429bfd28654d2234d132a44fa1c0a7e0569becb8211662a7d821ca9e0bb5
+package	mica-systemd	arm64	257.13-mica17	6087429bfd28654d2234d132a44fa1c0a7e0569becb8211662a7d821ca9e0bb5
+package	mica-systemd	armhf	257.13-mica17	6087429bfd28654d2234d132a44fa1c0a7e0569becb8211662a7d821ca9e0bb5
 package	mica-systemd-boot	amd64	257.13-mica3	bccb4d5a12d62e731b47faffcc8b16d3241a9dd15d583ce557da228bdf4570b4
 package	mica-systemd-boot	arm64	257.13-mica3	739d7c7306170119afd4e62c048ce544b9c9e3d9404897a7962d68dafdeead34
 package	mica-tzdata	amd64	2026c-mica3	4fe966f7c8e5af6956b99698342c2ebf7751698e5393b2d6a95801117ea6af7d
 package	mica-tzdata	arm64	2026c-mica3	4fe966f7c8e5af6956b99698342c2ebf7751698e5393b2d6a95801117ea6af7d
 package	mica-tzdata	armhf	2026c-mica3	4fe966f7c8e5af6956b99698342c2ebf7751698e5393b2d6a95801117ea6af7d
-package	mica-wifi	amd64	2.12-mica5	b41ca65da894d8bbb8d3d1999fe8433ee69ce7def2fe6f44b2f7c21ad8d327c3
-package	mica-wifi	arm64	2.12-mica5	92d7ef7388286bd68c0ab8c067b9cab6f98574411af00fe29a621f7c2a126051
+package	mica-wifi	amd64	2.12-mica6	3417b40489e0494cbdf5e15a3719410cbce70b41dd648007b379d77158c10861
+package	mica-wifi	arm64	2.12-mica6	e0b5530615ad4fe5ad97b3f2e42e1d4091058a6cae7462d9f65c83e96346971d
 package	mica-wifi-ap	amd64	2.12-mica5	bab140e40f894c687cbc5c280143eb507d6375c8e8d0b5ccc7c59128d92b73f1
 package	mica-wifi-ap	arm64	2.12-mica5	a19574a853e8d074a9035fecbd4378b7a27a3c601691307660eadc6b2ac1ba51
 upstream	alsa-utils	amd64	1.2.14-1	1e2b5f31fc826e1af25e2a12e37cd8d361ff25feaf224c6bbef3cc5d6cd2596b	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/a/alsa-utils/alsa-utils_1.2.14-1_amd64.deb	alsa-utils
@@ -367,24 +370,24 @@ upstream	libsasl2-modules-db	armhf	2.1.28+dfsg1-9	d04bcc100587e9ecf2afb0170a7c06
 upstream	libsctp1	amd64	1.0.21+dfsg-1	0a21ab1b6bcb8277ae62b20f41dc29bbbf87e8cd5899c93d29ebfa1f17a0e811	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/l/lksctp-tools/libsctp1_1.0.21+dfsg-1_amd64.deb	iperf3
 upstream	libsctp1	arm64	1.0.21+dfsg-1	27aad7a493fe911a81b041aba3a3453ecf7d27fa8c0d080ee44b7349dd2e3944	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/l/lksctp-tools/libsctp1_1.0.21+dfsg-1_arm64.deb	iperf3
 upstream	libsctp1	armhf	1.0.21+dfsg-1	46c9e0b594cb7fbc9ae63d3f138a75c4117c5a84c4844fdc947e60d0bf5cefde	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/l/lksctp-tools/libsctp1_1.0.21+dfsg-1_armhf.deb	iperf3
-upstream	libseccomp2	amd64	2.6.0-2	89d5138e05fb6a86b9afd8b54dc0fb4b14f4c27c05e6c5f767c2132bdf808531	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/libs/libseccomp/libseccomp2_2.6.0-2_amd64.deb	bluez,i2c-tools,libseccomp2,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
-upstream	libseccomp2	arm64	2.6.0-2	013d0af0444177960d5899f4673e35d492f31edfc40cb8d5a82bb56147ab2e35	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/libs/libseccomp/libseccomp2_2.6.0-2_arm64.deb	bluez,i2c-tools,libseccomp2,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
-upstream	libseccomp2	armhf	2.6.0-2	b4478752c51ce282cb72225ee66f1915be15b888d8fe52dd8a174cdc5bfee7b5	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/libs/libseccomp/libseccomp2_2.6.0-2_armhf.deb	bluez,i2c-tools,libseccomp2,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
+upstream	libseccomp2	amd64	2.6.0-2	89d5138e05fb6a86b9afd8b54dc0fb4b14f4c27c05e6c5f767c2132bdf808531	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/libs/libseccomp/libseccomp2_2.6.0-2_amd64.deb	bluez,i2c-tools,libseccomp2,systemd,systemd-netlogd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
+upstream	libseccomp2	arm64	2.6.0-2	013d0af0444177960d5899f4673e35d492f31edfc40cb8d5a82bb56147ab2e35	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/libs/libseccomp/libseccomp2_2.6.0-2_arm64.deb	bluez,i2c-tools,libseccomp2,systemd,systemd-netlogd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
+upstream	libseccomp2	armhf	2.6.0-2	b4478752c51ce282cb72225ee66f1915be15b888d8fe52dd8a174cdc5bfee7b5	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/libs/libseccomp/libseccomp2_2.6.0-2_armhf.deb	bluez,i2c-tools,libseccomp2,systemd,systemd-netlogd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
 upstream	libssh2-1t64	amd64	1.11.1-1+deb13u2	dbb1024c192d4d292b7cfa902b96076cfe81b56a5eed4fb28da36e8bf543e49a	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/libs/libssh2/libssh2-1t64_1.11.1-1+deb13u2_amd64.deb	curl
 upstream	libssh2-1t64	arm64	1.11.1-1+deb13u2	245565f4ce5493d67a3c54e26bc3d9cf28b1b70eeb912de7cda61af52268017d	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/libs/libssh2/libssh2-1t64_1.11.1-1+deb13u2_arm64.deb	curl
 upstream	libssh2-1t64	armhf	1.11.1-1+deb13u2	a52c469d5574d2d7aebc44ccfadb05bd43398d3f158c8bcbc1b53ada37d71e61	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/libs/libssh2/libssh2-1t64_1.11.1-1+deb13u2_armhf.deb	curl
-upstream	libssl3t64	amd64	3.5.7-1~deb13u2	916f7f40b34a06e6ebfaefcdab331bff458328411da672598f126a760472467d	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/libssl3t64_3.5.7-1~deb13u2_amd64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
-upstream	libssl3t64	arm64	3.5.7-1~deb13u2	ec131326aa9fa9ec934eca386bc7991f328fe383eaefd3e43bd8901a9199c5ae	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/libssl3t64_3.5.7-1~deb13u2_arm64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
-upstream	libssl3t64	armhf	3.5.7-1~deb13u2	94538529b1471c2055476df47fbc29a67a734c7c9d7f1fb44fd54c97e43c40c5	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/libssl3t64_3.5.7-1~deb13u2_armhf.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
+upstream	libssl3t64	amd64	3.5.7-1~deb13u2	916f7f40b34a06e6ebfaefcdab331bff458328411da672598f126a760472467d	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/libssl3t64_3.5.7-1~deb13u2_amd64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,sudo,systemd,systemd-netlogd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
+upstream	libssl3t64	arm64	3.5.7-1~deb13u2	ec131326aa9fa9ec934eca386bc7991f328fe383eaefd3e43bd8901a9199c5ae	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/libssl3t64_3.5.7-1~deb13u2_arm64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,sudo,systemd,systemd-netlogd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
+upstream	libssl3t64	armhf	3.5.7-1~deb13u2	94538529b1471c2055476df47fbc29a67a734c7c9d7f1fb44fd54c97e43c40c5	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/libssl3t64_3.5.7-1~deb13u2_armhf.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,sudo,systemd,systemd-netlogd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
 upstream	libstdc++6	amd64	14.2.0-19	ab1fa05837aa7a92aae748fd07a18a35f7d18bb4a71c4724fe2bbf0e32089de0	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/g/gcc-14/libstdc++6_14.2.0-19_amd64.deb	bind9-dnsutils,gdisk,gpiod,tmux,zstd
 upstream	libstdc++6	arm64	14.2.0-19	6669b0c52a2e7c6af9adfdabce3ff6e286065cdfbc7b85280862b5f799daebee	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/g/gcc-14/libstdc++6_14.2.0-19_arm64.deb	bind9-dnsutils,gdisk,gpiod,tmux,zstd
 upstream	libstdc++6	armhf	14.2.0-19	9c82eecc30961a3da3e062c0dba8ce076736059f4b8e7794c803985e75aea48b	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/g/gcc-14/libstdc++6_14.2.0-19_armhf.deb	bind9-dnsutils,gdisk,gpiod,tmux,zstd
 upstream	libsubid5	amd64	1:4.17.4-2	4d4faef8143c117a055a9041a7e99f8ba014c420a9b6e2fef5c693482581a204	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/shadow/libsubid5_4.17.4-2_amd64.deb	libsubid5
 upstream	libsubid5	arm64	1:4.17.4-2	0cbd234e3e1afad8195cf12d87c7eb820a3e55b252e48da930cd9f0df3e787c1	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/shadow/libsubid5_4.17.4-2_arm64.deb	libsubid5
 upstream	libsubid5	armhf	1:4.17.4-2	20f454108943453a6805ea86670cffb031be0788f7617adf542355b695a7c9b1	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/shadow/libsubid5_4.17.4-2_armhf.deb	libsubid5
-upstream	libsystemd-shared	amd64	257.13-1~deb13u1	2d349824e57f88507e2a33360610d8afc143a4ad5e80ee4bf8f37b826d6f37f9	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/libsystemd-shared_257.13-1~deb13u1_amd64.deb	bluez,i2c-tools,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
-upstream	libsystemd-shared	arm64	257.13-1~deb13u1	b48df445566ff6c39395c9fc571524c9e03803bc2e434d7869fc21e723c64b4d	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/libsystemd-shared_257.13-1~deb13u1_arm64.deb	bluez,i2c-tools,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
-upstream	libsystemd-shared	armhf	257.13-1~deb13u1	324c5646f662dd162beeb73544814084734ba70fe62f740ee8fa99c36b49d542	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/libsystemd-shared_257.13-1~deb13u1_armhf.deb	bluez,i2c-tools,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
+upstream	libsystemd-shared	amd64	257.13-1~deb13u1	2d349824e57f88507e2a33360610d8afc143a4ad5e80ee4bf8f37b826d6f37f9	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/libsystemd-shared_257.13-1~deb13u1_amd64.deb	bluez,i2c-tools,systemd,systemd-netlogd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
+upstream	libsystemd-shared	arm64	257.13-1~deb13u1	b48df445566ff6c39395c9fc571524c9e03803bc2e434d7869fc21e723c64b4d	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/libsystemd-shared_257.13-1~deb13u1_arm64.deb	bluez,i2c-tools,systemd,systemd-netlogd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
+upstream	libsystemd-shared	armhf	257.13-1~deb13u1	324c5646f662dd162beeb73544814084734ba70fe62f740ee8fa99c36b49d542	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/libsystemd-shared_257.13-1~deb13u1_armhf.deb	bluez,i2c-tools,systemd,systemd-netlogd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
 upstream	libtasn1-6	amd64	4.20.0-2+deb13u1	23fec6e06583ce2bad9b2c04c9b485e90440e259b1abf8677cd80d3ce60831ad	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/libt/libtasn1-6/libtasn1-6_4.20.0-2+deb13u1_amd64.deb	curl
 upstream	libtasn1-6	arm64	4.20.0-2+deb13u1	e421da949cd26245f24c594265d6a01900b5e060e80793f68b977f7bfaa009ef	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/libt/libtasn1-6/libtasn1-6_4.20.0-2+deb13u1_arm64.deb	curl
 upstream	libtasn1-6	armhf	4.20.0-2+deb13u1	f65d32ac8c9f3aea73f960100c9590b7884e4d4569fe6d02d67ef87a55004ad2	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/libt/libtasn1-6/libtasn1-6_4.20.0-2+deb13u1_armhf.deb	curl
@@ -452,9 +455,9 @@ upstream	openrc	armhf	0.56-1	7557a862d59d50812ed0a880cd11bc01a64561f921916a9c503
 upstream	openssl	amd64	3.5.7-1~deb13u2	4ff006f431d8c2e69fa736885a3b6e779f2448535f69dbde821d9f0ff87ad8ea	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/openssl_3.5.7-1~deb13u2_amd64.deb	openssl
 upstream	openssl	arm64	3.5.7-1~deb13u2	ff38f9e4fdbfef72d9cb31088e5e42f58c83c2fb1d1bbb4e4b4c9adc53c17100	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/openssl_3.5.7-1~deb13u2_arm64.deb	openssl
 upstream	openssl	armhf	3.5.7-1~deb13u2	94afc1c0bf72552b729dfe73eba3439e914ab8ec0c36b5564247dc286ed46bb1	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/openssl_3.5.7-1~deb13u2_armhf.deb	openssl
-upstream	openssl-provider-legacy	amd64	3.5.7-1~deb13u2	f155c8191ae6d41da73d792f4182680aeafeb85c3dd223934ee9fdd115c4f1fa	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/openssl-provider-legacy_3.5.7-1~deb13u2_amd64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
-upstream	openssl-provider-legacy	arm64	3.5.7-1~deb13u2	7628954796eb651fc499ad98d4e51435691c2ccce0b5fbae6b198cbece742db4	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/openssl-provider-legacy_3.5.7-1~deb13u2_arm64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
-upstream	openssl-provider-legacy	armhf	3.5.7-1~deb13u2	eefa69b451e991b52daeef669114dd23956c2d14d3bd4e5a1b4cc0c5ca62111d	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/openssl-provider-legacy_3.5.7-1~deb13u2_armhf.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,systemd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
+upstream	openssl-provider-legacy	amd64	3.5.7-1~deb13u2	f155c8191ae6d41da73d792f4182680aeafeb85c3dd223934ee9fdd115c4f1fa	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/openssl-provider-legacy_3.5.7-1~deb13u2_amd64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,sudo,systemd,systemd-netlogd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
+upstream	openssl-provider-legacy	arm64	3.5.7-1~deb13u2	7628954796eb651fc499ad98d4e51435691c2ccce0b5fbae6b198cbece742db4	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/openssl-provider-legacy_3.5.7-1~deb13u2_arm64.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,sudo,systemd,systemd-netlogd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
+upstream	openssl-provider-legacy	armhf	3.5.7-1~deb13u2	eefa69b451e991b52daeef669114dd23956c2d14d3bd4e5a1b4cc0c5ca62111d	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/o/openssl/openssl-provider-legacy_3.5.7-1~deb13u2_armhf.deb	alsa-utils,bind9-dnsutils,bluez,coreutils,curl,i2c-tools,iperf3,iproute2,kmod,libgssapi-krb5-2,libssl3t64,lsof,openssl,pciutils,rsync,socat,sudo,systemd,systemd-netlogd,systemd-repart,systemd-resolved,systemd-sysv,systemd-timesyncd,tcpdump,udev
 upstream	parted	amd64	3.6-5	fbb8429783a8dd065bf9c37e249acaa56cb7bb8a3ff5bb531ef0aac3e8945f2d	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/p/parted/parted_3.6-5_amd64.deb	parted
 upstream	parted	arm64	3.6-5	62006921ec2a8b10ad3e52d0bbaf41b31f6806ea5d3ee15c8544b379c6e712ab	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/p/parted/parted_3.6-5_arm64.deb	parted
 upstream	parted	armhf	3.6-5	dcf7f676a289acc4f5f9413a9aae75f3527666aa03ea0842c3f8ee42dea6c1de	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/p/parted/parted_3.6-5_armhf.deb	parted
@@ -494,9 +497,15 @@ upstream	socat	armhf	1.8.0.3-1+deb13u1	203e14ce57ef76005dfc070a27c22bc24f63ee9ce
 upstream	strace	amd64	6.13+ds-1	cae290b67cf835350a2cde58ca332256fba475784b3e02a9a8677d73eaf47511	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/strace/strace_6.13+ds-1_amd64.deb	strace
 upstream	strace	arm64	6.13+ds-1	d793af70a104eb0bd5be466c3043b512f549e7cb27971320a7c9b8f4c6165e55	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/strace/strace_6.13+ds-1_arm64.deb	strace
 upstream	strace	armhf	6.13+ds-1	4081be92414316cf6bfa345f50990bab1ab025f87e6de0997388a54686ef5aef	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/strace/strace_6.13+ds-1_armhf.deb	strace
-upstream	systemd	amd64	257.13-1~deb13u1	ee81302a1d5b7434762b6e784a572854d4b6cf6235e33e2d104ad4e1cae71ab4	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/systemd_257.13-1~deb13u1_amd64.deb	bluez,i2c-tools,systemd,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
-upstream	systemd	arm64	257.13-1~deb13u1	dcc3ba37f0488ecd513820035b4efc300e198849f5b6437a9bac9c2f307149ab	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/systemd_257.13-1~deb13u1_arm64.deb	bluez,i2c-tools,systemd,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
-upstream	systemd	armhf	257.13-1~deb13u1	7041cc2c93556f659dd62f1f740c01bb65301acbcebf4a66b96e454b307a8d47	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/systemd_257.13-1~deb13u1_armhf.deb	bluez,i2c-tools,systemd,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
+upstream	sudo	amd64	1.9.16p2-3+deb13u2	4f926f8f0704575158a90135713977f98f7d50d185969d9a8a405cdce5e3e50c	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/sudo/sudo_1.9.16p2-3+deb13u2_amd64.deb	sudo
+upstream	sudo	arm64	1.9.16p2-3+deb13u2	907d333f72f3369b2ceda64dbcfccf0dc515543b76ac68d5c901e309f118709b	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/sudo/sudo_1.9.16p2-3+deb13u2_arm64.deb	sudo
+upstream	sudo	armhf	1.9.16p2-3+deb13u2	7b8533874bac2bb6d723325e9d9f29d2c1474d096acbc78ee6f9d36d056cabca	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/sudo/sudo_1.9.16p2-3+deb13u2_armhf.deb	sudo
+upstream	systemd	amd64	257.13-1~deb13u1	ee81302a1d5b7434762b6e784a572854d4b6cf6235e33e2d104ad4e1cae71ab4	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/systemd_257.13-1~deb13u1_amd64.deb	bluez,i2c-tools,systemd,systemd-netlogd,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
+upstream	systemd	arm64	257.13-1~deb13u1	dcc3ba37f0488ecd513820035b4efc300e198849f5b6437a9bac9c2f307149ab	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/systemd_257.13-1~deb13u1_arm64.deb	bluez,i2c-tools,systemd,systemd-netlogd,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
+upstream	systemd	armhf	257.13-1~deb13u1	7041cc2c93556f659dd62f1f740c01bb65301acbcebf4a66b96e454b307a8d47	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/systemd_257.13-1~deb13u1_armhf.deb	bluez,i2c-tools,systemd,systemd-netlogd,systemd-resolved,systemd-sysv,systemd-timesyncd,udev
+upstream	systemd-netlogd	amd64	1.4.4-1	dbd879ef27b5f5c471e22dff2dc31ba4c234c264b6b38a71482419039ae28cba	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd-netlogd/systemd-netlogd_1.4.4-1_amd64.deb	systemd-netlogd
+upstream	systemd-netlogd	arm64	1.4.4-1	68da4f5c0e623f0976939c5a0762fe8c4699fa5a475d943095706bcc96ebdfc8	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd-netlogd/systemd-netlogd_1.4.4-1_arm64.deb	systemd-netlogd
+upstream	systemd-netlogd	armhf	1.4.4-1	447ef525b90463711f1ce9fe3457f8943dfa9a5c1afec7105caf67b334b7ad6c	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd-netlogd/systemd-netlogd_1.4.4-1_armhf.deb	systemd-netlogd
 upstream	systemd-repart	amd64	257.13-1~deb13u1	06c6f2c285eb81c8ab1dbcc8f5f8721dd96a2228bc9e6a85beaa22460e0599e1	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/systemd-repart_257.13-1~deb13u1_amd64.deb	systemd-repart
 upstream	systemd-repart	arm64	257.13-1~deb13u1	96525ef6d1b3f9096d2ba98f880516c14f7aca1767e30659475e83e5ac36b8c2	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/systemd-repart_257.13-1~deb13u1_arm64.deb	systemd-repart
 upstream	systemd-repart	armhf	257.13-1~deb13u1	803970f8a1a3f8941c207a90cafbe2dbe06b13c5415e18659d0ea415108c1645	https://snapshot.debian.org/archive/debian/20261107T000000Z/pool/main/s/systemd/systemd-repart_257.13-1~deb13u1_armhf.deb	systemd-repart
