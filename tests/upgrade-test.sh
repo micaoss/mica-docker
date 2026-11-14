@@ -24,11 +24,12 @@ mkrepo() { # <name> <tag> [annotated]
     if [ -n "${3:-}" ]; then git -C "$d" -c user.name=t -c user.email=t@t tag -a -m "$2" "$2"; else git -C "$d" tag "$2"; fi
     git -C "$d" rev-parse HEAD
 }
-# moby moves to this tree's tag, so the description it writes is this tree's.
+# moby and runc move to this tree's tags, so the description they write is this tree's.
 MOBY=$(awk -F'\t' '$1 == "git" && $2 == "moby" { sub(/^docker-v/, "", $4); print $4 }' locks/upstream.lock)
 MOBY_COMMIT=$(mkrepo moby "docker-v${MOBY}" annotated)
-RUNC_COMMIT=$(mkrepo runc v1.5.2)
-RUNC_NEXT=$(mkrepo runc-next v1.5.3)
+RUNC=$(awk -F'\t' '$1 == "git" && $2 == "runc" { print $4 }' locks/upstream.lock)
+RUNC_COMMIT=$(mkrepo runc "${RUNC}")
+RUNC_NEXT=$(mkrepo runc-next v9.9.9)
 
 FIX="$TMP/repo"
 mkdir -p "$FIX/tools" "$FIX/bin" "$FIX/deb" "$FIX/locks/pins" "$FIX/pins"
@@ -76,8 +77,8 @@ if [ "$RC" -eq 0 ] && says "$OUT" "upgrade.sh: unchanged" && [ "$(field Version)
 else fail "U1 rc=$RC: $OUT"; fi
 
 BEHIND="moby docker-v29.8.2 docker-v${MOBY}
-runc v1.5.1 v1.5.2" run
-if [ "$RC" -eq 0 ] && says "$OUT" "upgrade.sh: changed" && [ "$(row moby)" = "docker-v${MOBY} ${MOBY_COMMIT}" ] && [ "$(row runc)" = "v1.5.2 ${RUNC_COMMIT}" ]; then
+runc v1.5.1 ${RUNC}" run
+if [ "$RC" -eq 0 ] && says "$OUT" "upgrade.sh: changed" && [ "$(row moby)" = "docker-v${MOBY} ${MOBY_COMMIT}" ] && [ "$(row runc)" = "${RUNC} ${RUNC_COMMIT}" ]; then
     pass "U2 the trees behind take the newest tag and the commit it peels to, annotated or lightweight"
 else fail "U2 rc=$RC: $OUT / $(row moby) / $(row runc)"; fi
 if [ "$(field Version)" = "${MOBY}-1" ] && [ "$(field Source-Date-Epoch)" != 1000000000 ]; then
@@ -85,7 +86,7 @@ if [ "$(field Version)" = "${MOBY}-1" ] && [ "$(field Source-Date-Epoch)" != 100
 else fail "U3 Version $(field Version), epoch $(field Source-Date-Epoch)"; fi
 body() { grep -v -e '^Version: ' -e '^Source-Date-Epoch: ' "$1"; }
 if cmp -s <(body deb/mica-docker.control) <(body "$FIX/deb/mica-docker.control") &&
-    grep -q "^Comment: moby docker-v${MOBY}\.$" "$FIX/deb/copyright" && grep -q "^Comment: opencontainers/runc v1.5.2," "$FIX/deb/copyright"; then
+    grep -q "^Comment: moby docker-v${MOBY}\.$" "$FIX/deb/copyright" && grep -q "^Comment: opencontainers/runc ${RUNC}," "$FIX/deb/copyright"; then
     pass "U4 the description and deb/copyright name the new versions"
 else fail "U4 $(diff <(body deb/mica-docker.control) <(body "$FIX/deb/mica-docker.control"); grep -n '^Comment: moby\|^Comment: opencontainers' "$FIX/deb/copyright")"; fi
 
@@ -95,8 +96,8 @@ if [ "$RC" -eq 0 ] && says "$OUT" "upgrade.sh: unchanged" && [ "$(field Version)
 else fail "U5 rc=$RC: $OUT"; fi
 
 sed -i "s|file://$TMP/upstream/runc\t|file://$TMP/upstream/runc-next\t|" "$FIX/locks/upstream.lock"
-BEHIND="runc v1.5.2 v1.5.3" run
-if [ "$RC" -eq 0 ] && [ "$(field Version)" = "${MOBY}-2" ] && [ "$(row runc)" = "v1.5.3 ${RUNC_NEXT}" ]; then
+BEHIND="runc ${RUNC} v9.9.9" run
+if [ "$RC" -eq 0 ] && [ "$(field Version)" = "${MOBY}-2" ] && [ "$(row runc)" = "v9.9.9 ${RUNC_NEXT}" ]; then
     pass "U6 another tree's move bumps the revision"
 else fail "U6 rc=$RC: $OUT / $(field Version)"; fi
 
