@@ -5,6 +5,6 @@ source	libseccomp-dev	arm64	2.6.0-2	a4b5e33f3c609e1186ed4725d380a96372bb6a4976a9
 git	cli	https://github.com/docker/cli.git	v29.9.3	5457199aa57c45e990c59c89cab5f02b817238d7
 git	compose	https://github.com/docker/compose.git	v5.7.1	fb1fd129f86828359335477f82821525201d4a8c
 git	containerd	https://github.com/containerd/containerd.git	v2.4.2	b7a25261e029d68978bbf290df0a62fc819b3c51
-git	moby	https://github.com/moby/moby.git	docker-v29.9.3	70efc0e31da3a115fc87574d1b786fa2b867c346
+git	moby	https://github.com/moby/moby.git	docker-v29.10.0	06db1734267bf7770914b417bff6556d835bf8cc
 git	runc	https://github.com/opencontainers/runc.git	v1.5.3	46365c62967c76a765a5e347f48f0c7b3b571fe9
 git	tini	https://github.com/krallin/tini.git	v0.19.0	de40ad007797e0dcd8b7126f27bb87401d224240
